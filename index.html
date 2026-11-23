@@ -1176,14 +1176,8 @@
       PAYMENT: {
         qrisImage: "./qris.jpeg", // Contoh: "./qris.png" atau URL gambar QRIS Anda
         qrisCaption: "Scan QRIS di atas via Mobile Banking / E-Wallet (GoPay, OVO, DANA, ShopeePay)",
-        accounts: [
-          {
-            bank: "Bank / E-Wallet (Edit di CONFIG)",
-            number: "0000-0000-0000",
-            holder: "a.n. Nama Penerima (Edit di CONFIG)"
-          }
-        ],
-        priceNote: "Nominal sesuai ukuran & ongkir yang diinfokan panitia (Edit catatan harga di CONFIG.PAYMENT)",
+        accounts: [],
+        priceNote: "Nominal di atas adalah harga kaos sesuai ukuran Anda. Ongkir dibayar terpisah dan akan diinfokan oleh panitia.",
         priceList: []
       }
     };
@@ -1833,6 +1827,7 @@
           nomTextEl.textContent = nom > 0 ? "Rp " + nom.toLocaleString("id-ID") : "Konfirmasi ke Admin";
         }
         if (nomCopyBtn) {
+          nomCopyBtn.classList.toggle("hidden", nom <= 0);
           nomCopyBtn.onclick = function () {
             if (nom > 0 && copyText(String(nom))) {
               showToast("Nominal Rp " + nom.toLocaleString("id-ID") + " disalin!", "success");
