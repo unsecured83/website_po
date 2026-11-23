@@ -1,0 +1,2448 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="referrer" content="no-referrer" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>INDEPENDENT • Portal Pengiriman & Pembayaran PO Alumni Sudah Boyong</title>
+
+  <!-- Google Fonts: Cinzel Decorative, Cinzel, Plus Jakarta Sans, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            void: '#070606',
+            obsidian: '#0D0B0B',
+            charcoal: '#141211',
+            stoneSurface: '#1A1715',
+            bronzeBorder: '#2E2722',
+            bone: '#E8DAC3',
+            mutedStone: '#A89B8B',
+            bronze: '#B89B74',
+            crimsonDark: '#9E2B2B',
+            crimson: '#C43E3E',
+            amberGold: '#C8923E',
+            moss: '#5B8C68'
+          },
+          fontFamily: {
+            gothic: ['"Cinzel Decorative"', 'Cinzel', 'serif'],
+            serifTitle: ['Cinzel', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'monospace']
+          },
+          boxShadow: {
+            relic: '0 24px 60px -15px rgba(0, 0, 0, 0.88), 0 0 0 1px rgba(184, 155, 116, 0.14)',
+            'glow-bone': '0 0 28px -6px rgba(232, 218, 195, 0.22)',
+            'glow-crimson': '0 0 26px -6px rgba(196, 62, 62, 0.30)',
+            'glow-amber': '0 0 26px -6px rgba(200, 146, 62, 0.28)',
+            'glow-moss': '0 0 26px -6px rgba(91, 140, 104, 0.28)'
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="relative min-h-screen bg-void text-bone font-sans antialiased overflow-x-hidden selection:bg-bronze/30 selection:text-bone">
+
+  <!-- ===================================================================== -->
+  <!-- LATAR KABUT KATEDRAL & TEKSTUR HALFTONE RASTER PLASTISOL              -->
+  <!-- ===================================================================== -->
+  <div aria-hidden="true" class="pointer-events-none fixed inset-0 z-0 overflow-hidden">
+    <!-- Cathedral Mist & Warm Antique Radial Glows -->
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_90%_55%_at_50%_-8%,rgba(184,155,116,0.16),rgba(46,39,34,0.10)_42%,rgba(7,6,6,0)_76%)]"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_12%_30%,rgba(232,218,195,0.05),transparent_42%),radial-gradient(circle_at_88%_24%,rgba(184,155,116,0.06),transparent_40%)]"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_44%,rgba(0,0,0,0.86)_100%)]"></div>
+    <!-- Fine Plastisol Halftone Dot Raster + Woodcut Engraving Grain -->
+    <svg class="absolute inset-0 w-full h-full opacity-[0.14] mix-blend-screen" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="plastisol-halftone" width="8" height="8" patternUnits="userSpaceOnUse">
+          <circle cx="2" cy="2" r="0.65" fill="#E8DAC3" fill-opacity="0.34" />
+          <circle cx="6" cy="6" r="0.55" fill="#B89B74" fill-opacity="0.24" />
+        </pattern>
+        <filter id="engrave-grain">
+          <feTurbulence type="fractalNoise" baseFrequency="0.80" numOctaves="2" stitchTiles="stitch" />
+          <feColorMatrix type="saturate" values="0" />
+        </filter>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#plastisol-halftone)" />
+      <rect width="100%" height="100%" filter="url(#engrave-grain)" opacity="0.22" />
+    </svg>
+  </div>
+
+  <!-- Toast Notification Stack (Pengganti alert()) -->
+  <div id="toast-container" class="fixed top-4 right-4 left-4 sm:left-auto sm:w-96 z-50 flex flex-col gap-2.5 pointer-events-none" aria-live="polite"></div>
+
+
+  <!-- ===================================================================== -->
+  <!-- HERO HEADER — DARK GOTHIC ENGRAVING                                   -->
+  <!-- ===================================================================== -->
+  <header class="relative z-10 overflow-hidden border-b border-bronzeBorder">
+    <!-- Optional Poster Background (otomatis tampil jika CONFIG.ASSETS.posterBg diisi) -->
+    <div id="hero-poster-wrap" class="hidden absolute inset-0 z-0 pointer-events-none">
+      <img id="hero-poster-img" src="" alt="Poster INDEPENDENT PO Alumni" class="w-full h-full object-cover object-center opacity-30 grayscale-[20%] contrast-110" />
+      <div class="absolute inset-0 bg-gradient-to-b from-void/80 via-void/65 to-void"></div>
+    </div>
+
+    <!-- Siluet Katedral & Ranting Duri SVG -->
+    <div aria-hidden="true" class="pointer-events-none absolute inset-0 z-0 flex justify-center overflow-hidden opacity-30">
+      <svg class="w-full max-w-4xl h-full text-bronze" viewBox="0 0 900 380" fill="none" preserveAspectRatio="xMidYMin slice">
+        <path d="M120 380 V180 C120 96 280 34 450 10 C620 34 780 96 780 180 V380" stroke="currentColor" stroke-opacity="0.24" stroke-width="1.2" />
+        <path d="M155 380 V190 C155 114 295 58 450 38 C605 58 745 114 745 190 V380" stroke="currentColor" stroke-opacity="0.14" stroke-width="1" stroke-dasharray="4 6" />
+        <path d="M0 95 C60 110 108 78 158 50 M30 112 C72 145 118 140 158 118 M0 245 C52 232 90 262 128 282" stroke="currentColor" stroke-opacity="0.20" stroke-width="1.1" />
+        <path d="M900 95 C840 110 792 78 742 50 M870 112 C828 145 782 140 742 118 M900 245 C848 232 810 262 772 282" stroke="currentColor" stroke-opacity="0.20" stroke-width="1.1" />
+      </svg>
+    </div>
+
+    <div class="relative z-10 max-w-2xl mx-auto px-4 pt-7 pb-9 sm:pt-10 sm:pb-11 text-center">
+      <!-- Badge Resmi -->
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-charcoal/90 border border-bronze/35 shadow-glow-bone">
+        <span class="w-1.5 h-1.5 rounded-full bg-bronze"></span>
+        <span class="font-mono text-[10px] sm:text-[11px] font-semibold tracking-[0.16em] text-bone uppercase">
+          PO ALUMNI SUDAH BOYONG • PORTAL PRIVAT
+        </span>
+        <span class="w-1.5 h-1.5 rounded-full bg-bronze"></span>
+      </div>
+
+      <!-- Emblem Bulat Gothic (Cross & Thorns Wreath SVG / Custom emblemStamp) -->
+      <div class="mt-5 flex justify-center">
+        <div class="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-obsidian/95 border border-bronze/40 p-1.5 shadow-glow-bone flex items-center justify-center">
+          <div class="absolute inset-1.5 rounded-full border border-dashed border-bronze/40 pointer-events-none"></div>
+          <img id="hero-emblem-img" src="" alt="Emblem INDEPENDENT" class="hidden w-full h-full object-contain rounded-full p-1" />
+          <svg id="hero-emblem-svg" class="w-full h-full" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Emblem Gothic Independent">
+            <circle cx="60" cy="60" r="52" stroke="#B89B74" stroke-opacity="0.45" stroke-width="0.9" />
+            <path d="M60 10 C32 12 12 33 12 60 C12 85 29 105 53 109" stroke="#E8DAC3" stroke-width="1.6" stroke-linecap="round" />
+            <path d="M60 10 C88 12 108 33 108 60 C108 85 91 105 67 109" stroke="#E8DAC3" stroke-width="1.6" stroke-linecap="round" />
+            <path d="M22 36 L14 31 M16 50 L8 48 M16 68 L8 70 M22 84 L14 89 M35 98 L29 105" stroke="#B89B74" stroke-width="1.2" stroke-linecap="round" />
+            <path d="M98 36 L106 31 M104 50 L112 48 M104 68 L112 70 M98 84 L106 89 M85 98 L91 105" stroke="#B89B74" stroke-width="1.2" stroke-linecap="round" />
+            <path d="M48 107 L65 113 M72 107 L55 113" stroke="#E8DAC3" stroke-width="1.5" stroke-linecap="round" />
+            <circle cx="60" cy="60" r="34" stroke="#B89B74" stroke-opacity="0.7" stroke-width="1.2" stroke-dasharray="3 2.5" />
+            <path d="M54 24 C57 32 56 42 54 49 L49 54 C42 56 32 57 24 54 L26 60 L24 66 C32 63 42 64 49 66 L54 71 C56 78 57 88 54 96 L60 94 L66 96 C63 88 64 78 66 71 L71 66 C78 64 88 63 96 66 L94 60 L96 54 C88 57 78 56 71 54 L66 49 C64 42 63 32 66 24 L60 26 Z" fill="#1A1715" stroke="#E8DAC3" stroke-width="1.5" stroke-linejoin="round" />
+            <path d="M55 37 H65 M55 83 H65 M37 55 V65 M83 55 V65" stroke="#B89B74" stroke-width="1.2" stroke-linecap="round" />
+            <circle cx="60" cy="60" r="7.5" fill="#070606" stroke="#E8DAC3" stroke-width="1.5" />
+            <circle cx="60" cy="60" r="2.2" fill="#B89B74" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Optional Custom Logo Header Image (CONFIG.ASSETS.logoHeader) -->
+      <img id="hero-logo-img" src="" alt="INDEPENDENT" class="hidden mx-auto mt-4 max-h-20 object-contain" />
+
+      <!-- Judul Monumental Gothic -->
+      <div id="hero-title-text">
+        <h1 class="mt-3.5 font-gothic text-3xl sm:text-5xl font-black tracking-[0.08em] text-transparent bg-clip-text bg-gradient-to-b from-[#F5EBD8] via-bone to-bronze drop-shadow-[0_4px_14px_rgba(0,0,0,0.92)]">
+          INDEPENDENT
+        </h1>
+        <p class="mt-1 font-serifTitle text-xs sm:text-sm font-bold tracking-[0.34em] text-bone/90 uppercase">
+          NOTHING IMPOSSIBLE
+        </p>
+      </div>
+
+      <!-- Ornamen Pembatas MMXVIII -->
+      <div class="mt-3 flex items-center justify-center gap-3">
+        <div class="h-px w-14 sm:w-24 bg-gradient-to-r from-transparent via-bronze/70 to-bone/80"></div>
+        <div class="inline-flex items-center gap-2 text-bronze">
+          <svg class="w-3 h-3 text-bone/85" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0L10.2 5.8L16 8L10.2 10.2L8 16L5.8 10.2L0 8L5.8 5.8L8 0Z" /></svg>
+          <span class="font-mono text-xs sm:text-[13px] font-bold tracking-[0.28em] text-bone">MMXVIII</span>
+          <svg class="w-3 h-3 text-bone/85" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0L10.2 5.8L16 8L10.2 10.2L8 16L5.8 10.2L0 8L5.8 5.8L8 0Z" /></svg>
+        </div>
+        <div class="h-px w-14 sm:w-24 bg-gradient-to-l from-transparent via-bronze/70 to-bone/80"></div>
+      </div>
+
+      <!-- Strip Info Edisi + Toggle Preview Artwork -->
+      <div class="mt-4 inline-flex flex-wrap items-center justify-center gap-2 px-3.5 py-2 rounded-xl bg-charcoal/90 border border-bronzeBorder text-[11px] sm:text-xs text-mutedStone">
+        <span class="inline-flex items-center gap-1.5 font-semibold text-crimson">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+          </svg>
+          PO Ditutup
+        </span>
+        <span class="text-bronze/50">•</span>
+        <span>Khusus <strong class="text-bone font-semibold">29 Pemesan Terdaftar</strong></span>
+        <span class="text-bronze/50">•</span>
+        <span>Privasi Terlindungi</span>
+        <span class="text-bronze/50 hidden sm:inline">•</span>
+        <button id="btn-toggle-edition" type="button" class="inline-flex items-center gap-1 text-bronze hover:text-bone underline underline-offset-4 decoration-bronze/50 font-medium transition cursor-pointer">
+          <span>Detail Edisi</span>
+          <svg id="icon-edition-chevron" class="w-3.5 h-3.5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Collapsible Artwork / Edition Preview Card -->
+      <div id="edition-preview-card" class="hidden mt-4 text-left rounded-2xl bg-charcoal/95 border border-bronze/35 p-4 shadow-relic">
+        <div class="flex flex-col sm:flex-row items-center gap-4">
+          <div class="w-24 h-28 rounded-xl bg-void border border-bronzeBorder flex items-center justify-center shrink-0 overflow-hidden p-2">
+            <img id="edition-art-img" src="" alt="Artwork INDEPENDENT" class="hidden w-full h-full object-contain" />
+            <svg id="edition-art-svg" class="w-full h-full" viewBox="0 0 80 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="4" width="72" height="92" rx="4" stroke="#B89B74" stroke-opacity="0.45" stroke-dasharray="3 2" />
+              <path d="M26 26 L30 16 L36 22 L40 13 L44 22 L50 16 L54 26 Z" stroke="#E8DAC3" stroke-width="1.3" fill="#1A1715" />
+              <path d="M22 33 C30 30 50 30 58 33 L54 36 C46 34 34 34 26 36 Z" fill="#B89B74" />
+              <path d="M36 35 L44 35 L43 79 L40 88 L37 79 Z" fill="#1A1715" stroke="#E8DAC3" stroke-width="1.3" />
+              <line x1="40" y1="36" x2="40" y2="82" stroke="#B89B74" stroke-width="0.9" />
+              <path d="M14 55 C28 70 52 70 66 55" stroke="#B89B74" stroke-width="1.4" stroke-dasharray="4 2" />
+              <text x="40" y="94" text-anchor="middle" fill="#E8DAC3" font-size="6.5" font-family="serif" letter-spacing="1.4">MMXVIII</text>
+            </svg>
+          </div>
+          <div class="flex-1 text-center sm:text-left">
+            <p class="font-mono text-[10px] tracking-[0.2em] uppercase text-bronze">Official Merchandise Portal</p>
+            <h3 class="mt-0.5 font-serifTitle text-sm sm:text-base font-bold text-bone">
+              INDEPENDENT — Nothing Impossible Edition
+            </h3>
+            <p class="mt-1.5 text-xs text-mutedStone leading-relaxed">
+              Portal resmi untuk pengisian alamat pengiriman, upload bukti pembayaran, cek status verifikasi admin, dan pelacakan nomor resi paket kaos Alumni Sudah Boyong.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================================================================== -->
+  <!-- KONTEN UTAMA                                                          -->
+  <!-- ===================================================================== -->
+  <main class="relative z-10 max-w-2xl mx-auto px-4 py-6 sm:py-8 pb-16 space-y-6">
+
+    <!-- =================================================================== -->
+    <!-- VIEW A: ACCESS GATE (PRIVACY-FIRST HYBRID LOGIN)                    -->
+    <!-- =================================================================== -->
+    <section id="view-access-gate" class="relative rounded-2xl bg-charcoal border border-bronze/30 shadow-relic p-1.5">
+      <div class="relative rounded-xl border border-bronzeBorder bg-gradient-to-b from-stoneSurface/85 to-charcoal p-5 sm:p-7">
+        <!-- 4 Gothic Corner Brackets -->
+        <svg aria-hidden="true" class="pointer-events-none absolute top-2 left-2 w-4 h-4 text-bronze/60" viewBox="0 0 20 20" fill="none"><path d="M1 19V5L5 1H19" stroke="currentColor" stroke-width="1.3"/><path d="M4 12V6L6 4H12" stroke="currentColor" stroke-width="0.9" stroke-opacity="0.6"/></svg>
+        <svg aria-hidden="true" class="pointer-events-none absolute top-2 right-2 w-4 h-4 text-bronze/60 rotate-90" viewBox="0 0 20 20" fill="none"><path d="M1 19V5L5 1H19" stroke="currentColor" stroke-width="1.3"/><path d="M4 12V6L6 4H12" stroke="currentColor" stroke-width="0.9" stroke-opacity="0.6"/></svg>
+        <svg aria-hidden="true" class="pointer-events-none absolute bottom-2 right-2 w-4 h-4 text-bronze/60 rotate-180" viewBox="0 0 20 20" fill="none"><path d="M1 19V5L5 1H19" stroke="currentColor" stroke-width="1.3"/><path d="M4 12V6L6 4H12" stroke="currentColor" stroke-width="0.9" stroke-opacity="0.6"/></svg>
+        <svg aria-hidden="true" class="pointer-events-none absolute bottom-2 left-2 w-4 h-4 text-bronze/60 -rotate-90" viewBox="0 0 20 20" fill="none"><path d="M1 19V5L5 1H19" stroke="currentColor" stroke-width="1.3"/><path d="M4 12V6L6 4H12" stroke="currentColor" stroke-width="0.9" stroke-opacity="0.6"/></svg>
+
+        <!-- Heading Access Gate -->
+        <div class="text-center mb-6">
+          <div class="mx-auto w-12 h-12 rounded-xl bg-obsidian border border-bronze/40 text-bronze flex items-center justify-center mb-3 shadow-glow-bone">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+            </svg>
+          </div>
+          <h2 class="font-serifTitle text-lg sm:text-xl font-bold tracking-wide text-bone">
+            Masuk Portal Pemesan PO
+          </h2>
+          <p class="mt-1.5 text-xs sm:text-sm text-mutedStone max-w-md mx-auto leading-relaxed">
+            Demi privasi data pengiriman &amp; resi setiap alumni, akses hanya terbuka bagi pemesan yang memiliki <strong class="text-bone">Kode Unik</strong> atau telah mendaftarkan nomor WA.
+          </p>
+        </div>
+
+        <!-- Tabs: Kode Unik vs Nama + 4 Digit WA -->
+        <div class="grid grid-cols-2 gap-1.5 p-1 rounded-xl bg-obsidian border border-bronzeBorder mb-5" role="tablist">
+          <button
+            id="tab-login-code"
+            type="button"
+            role="tab"
+            aria-selected="true"
+            class="min-h-[44px] px-3 py-2 rounded-lg text-xs sm:text-sm font-semibold transition cursor-pointer bg-stoneSurface text-bone border border-bronze/45 shadow-sm"
+          >
+            Masuk via Kode Unik
+          </button>
+          <button
+            id="tab-login-wa4"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            class="min-h-[44px] px-3 py-2 rounded-lg text-xs sm:text-sm font-semibold transition cursor-pointer text-mutedStone hover:text-bone border border-transparent"
+          >
+            Nama + 4 Digit WA
+          </button>
+        </div>
+
+        <!-- Error Box Privasi-Preserving -->
+        <div id="gate-error-box" class="hidden mb-4 rounded-xl bg-[#1D0F0F] border border-crimson/50 p-3.5 flex items-start gap-2.5">
+          <svg class="w-5 h-5 text-crimson shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+          </svg>
+          <p id="gate-error-text" class="text-xs sm:text-sm text-[#F4BDBD] leading-relaxed"></p>
+        </div>
+
+        <!-- TAB 1 FORM: KODE UNIK -->
+        <form id="form-login-code" class="space-y-4" novalidate>
+          <div>
+            <label for="input-kode-unik" class="block text-sm font-semibold text-bone mb-1.5">
+              Kode Unik / Link Personal <span class="text-crimson">*</span>
+            </label>
+            <input
+              id="input-kode-unik"
+              type="text"
+              autocomplete="off"
+              spellcheck="false"
+              placeholder="Contoh: IND-XXXXXXXX"
+              class="w-full min-h-[50px] px-4 py-3 rounded-xl bg-obsidian border border-bronzeBorder font-mono text-base sm:text-lg tracking-[0.14em] uppercase text-bone placeholder:font-sans placeholder:tracking-normal placeholder:normal-case placeholder:text-mutedStone/60 focus:outline-none focus:border-bronze focus:ring-2 focus:ring-bronze/25 transition"
+            />
+            <p class="mt-2 text-xs text-mutedStone leading-relaxed">
+              <strong class="text-bone">Wajib untuk pengisian pertama kali</strong> (sebelum alamat &amp; WA terdaftar), dan tetap bisa digunakan kapan saja untuk cek status atau resi.
+            </p>
+          </div>
+
+          <button
+            id="btn-login-code"
+            type="submit"
+            class="w-full min-h-[52px] px-5 py-3 rounded-xl bg-gradient-to-b from-[#F0E3CE] via-bone to-[#BFA37D] hover:from-[#F8EFE0] hover:to-[#CBAE87] active:scale-[0.99] text-void font-serifTitle font-extrabold text-sm sm:text-base tracking-[0.08em] uppercase shadow-glow-bone flex items-center justify-center gap-2 transition disabled:opacity-55 cursor-pointer"
+          >
+            <svg id="spinner-login-code" class="hidden w-5 h-5 animate-spin text-void" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-80" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+            </svg>
+            <span>Verifikasi &amp; Masuk</span>
+          </button>
+        </form>
+
+        <!-- TAB 2 FORM: NAMA + 4 DIGIT TERAKHIR WA -->
+        <form id="form-login-wa4" class="hidden space-y-4" novalidate>
+          <!-- Predictive Search Dropdown (Hanya 29 Nama PO, TANPA status/info pribadi) -->
+          <div id="wa4-combobox-wrap" class="relative">
+            <label for="input-wa4-name" class="block text-sm font-semibold text-bone mb-1.5">
+              Nama di List PO <span class="text-crimson">*</span>
+            </label>
+            <div class="relative flex items-center">
+              <input
+                id="input-wa4-name"
+                type="text"
+                autocomplete="off"
+                spellcheck="false"
+                role="combobox"
+                aria-expanded="false"
+                aria-controls="wa4-name-dropdown"
+                aria-autocomplete="list"
+                placeholder="Ketik & pilih nama Anda di list PO..."
+                class="w-full min-h-[50px] pl-4 pr-11 py-3 rounded-xl bg-obsidian border border-bronzeBorder text-base text-bone placeholder:text-mutedStone/60 focus:outline-none focus:border-bronze focus:ring-2 focus:ring-bronze/25 transition"
+              />
+              <button
+                id="btn-clear-wa4-name"
+                type="button"
+                aria-label="Hapus pilihan nama"
+                class="hidden absolute right-2.5 p-2 rounded-lg text-mutedStone hover:text-bone hover:bg-bronze/15 transition cursor-pointer"
+              >
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <div
+              id="wa4-name-dropdown"
+              role="listbox"
+              class="hidden absolute left-0 right-0 mt-1.5 rounded-xl bg-[#131110] border border-bronze/40 shadow-2xl max-h-60 overflow-y-auto z-40 divide-y divide-bronzeBorder/60"
+            ></div>
+            <p class="mt-1.5 text-xs text-mutedStone">
+              Gunakan panah atas/bawah &amp; Enter, atau ketuk nama Anda. Daftar ini tidak menampilkan status maupun data pribadi siapa pun.
+            </p>
+          </div>
+
+          <!-- 4 Digit Terakhir WA -->
+          <div>
+            <label for="input-wa4-digits" class="block text-sm font-semibold text-bone mb-1.5">
+              4 Digit Terakhir Nomor WhatsApp Terdaftar <span class="text-crimson">*</span>
+            </label>
+            <input
+              id="input-wa4-digits"
+              type="text"
+              inputmode="numeric"
+              maxlength="4"
+              autocomplete="off"
+              placeholder="Contoh: 4567"
+              class="w-full min-h-[50px] px-4 py-3 rounded-xl bg-obsidian border border-bronzeBorder font-mono text-lg tracking-[0.35em] text-bone placeholder:font-sans placeholder:tracking-normal placeholder:text-mutedStone/60 focus:outline-none focus:border-bronze focus:ring-2 focus:ring-bronze/25 transition tabular-nums"
+            />
+            <p class="mt-1.5 text-xs text-mutedStone">
+              Khusus bagi pemesan yang <strong class="text-bone">sudah mengisi formulir alamat &amp; nomor WA</strong> sebelumnya (untuk upload bukti bayar, cek status, atau cek resi).
+            </p>
+          </div>
+
+          <button
+            id="btn-login-wa4"
+            type="submit"
+            class="w-full min-h-[52px] px-5 py-3 rounded-xl bg-gradient-to-b from-[#F0E3CE] via-bone to-[#BFA37D] hover:from-[#F8EFE0] hover:to-[#CBAE87] active:scale-[0.99] text-void font-serifTitle font-extrabold text-sm sm:text-base tracking-[0.08em] uppercase shadow-glow-bone flex items-center justify-center gap-2 transition disabled:opacity-55 cursor-pointer"
+          >
+            <svg id="spinner-login-wa4" class="hidden w-5 h-5 animate-spin text-void" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-80" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+            </svg>
+            <span>Cek Status / Lanjutkan</span>
+          </button>
+        </form>
+
+        <!-- Hint Cepat Mode Simulasi (otomatis hilang saat Live Mode) -->
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- VIEW B: PORTAL PEMESAN (TERAUTENTIKASI — 6 STATUS STATE MACHINE)    -->
+    <!-- =================================================================== -->
+    <div id="view-buyer-portal" class="hidden space-y-6">
+
+      <!-- Garment Tag + Tombol Keluar + 4-Step Progress Tracker -->
+      <section class="relative rounded-2xl bg-charcoal border border-bronze/35 shadow-relic p-1.5">
+        <div class="relative rounded-xl border border-dashed border-bronze/45 bg-[linear-gradient(155deg,rgba(26,23,21,0.98),rgba(13,11,11,0.98))] p-4 sm:p-5">
+          <!-- Bar Atas Garment Tag -->
+          <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-bronzeBorder">
+            <div class="flex items-center gap-2 flex-wrap">
+              <span class="font-mono text-[10px] tracking-[0.2em] uppercase text-bronze font-semibold">
+                GARMENT TAG • AKUN TERVERIFIKASI
+              </span>
+              <span id="buyer-status-pill"></span>
+            </div>
+            <button
+              id="btn-logout"
+              type="button"
+              class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-obsidian border border-bronzeBorder hover:border-bronze/60 text-xs font-semibold text-mutedStone hover:text-bone transition cursor-pointer"
+            >
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+              </svg>
+              <span>Keluar / Ganti Akun</span>
+            </button>
+          </div>
+
+          <!-- Identitas Non-Sensitif Pemesan -->
+          <div class="mt-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-3.5">
+            <div class="min-w-0">
+              <div class="flex items-center gap-2 flex-wrap">
+                <span id="buyer-id" class="px-2 py-0.5 rounded bg-bronze/15 border border-bronze/35 font-mono text-xs font-bold text-bone">JT-01</span>
+                <span id="buyer-wilayah" class="text-xs text-mutedStone">Jawa Timur</span>
+              </div>
+              <h2 id="buyer-nama" class="mt-1.5 font-serifTitle text-xl sm:text-2xl font-bold text-bone tracking-wide break-words">
+                Habib
+              </h2>
+              <p id="buyer-wa-masked-row" class="hidden mt-1 font-mono text-xs text-mutedStone">
+                WA Terdaftar: <span id="buyer-wa-masked" class="text-bone"></span>
+              </p>
+            </div>
+
+            <div class="sm:text-right px-4 py-2.5 rounded-xl bg-void border border-bronzeBorder shrink-0">
+              <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-bronze">Ukuran Baju PO</p>
+              <p id="buyer-ukuran" class="mt-0.5 font-mono text-lg sm:text-xl font-bold text-bone tracking-wider">XL Pendek</p>
+            </div>
+          </div>
+
+          <!-- 4-Step Horizontal Progress Tracker -->
+          <div class="mt-5 pt-4 border-t border-bronzeBorder">
+            <ol id="progress-tracker" class="grid grid-cols-4 gap-1.5 sm:gap-2" aria-label="Progres pesanan">
+              <!-- Dirender dinamis oleh JavaScript -->
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================= -->
+      <!-- PANEL 1: BELUM_ISI (FORM ALAMAT & KONTAK PENGIRIMAN)              -->
+      <!-- ================================================================= -->
+      <section id="panel-belum-isi" class="hidden relative rounded-2xl bg-charcoal border border-bronze/30 shadow-relic p-1.5">
+        <div class="relative rounded-xl border border-bronzeBorder bg-gradient-to-b from-stoneSurface/70 to-charcoal p-5 sm:p-6">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="w-9 h-9 rounded-xl bg-void border border-bronze/40 text-bronze font-serifTitle font-bold text-base flex items-center justify-center shrink-0">1</span>
+            <div>
+              <h3 class="font-serifTitle text-base sm:text-lg font-bold tracking-wide text-bone">
+                Isi Alamat &amp; Kontak Pengiriman
+              </h3>
+              <p class="text-xs sm:text-sm text-mutedStone">
+                Lengkapi data di bawah ini untuk lanjut ke tahap pembayaran.
+              </p>
+            </div>
+          </div>
+
+          <!-- Banner Khusus Gabung Paket untuk LJ-06 & LJ-07 (Adit & Bojone Adit) -->
+          <div id="couple-merge-banner" class="hidden mb-5 rounded-xl bg-[#1D150D] border border-amberGold/45 p-4">
+            <div class="flex items-start gap-3">
+              <div class="w-9 h-9 rounded-lg bg-amberGold/15 border border-amberGold/35 text-amberGold flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                </svg>
+              </div>
+              <div class="flex-1">
+                <p class="font-mono text-[10px] tracking-[0.18em] uppercase text-amberGold font-bold">
+                  Opsi Gabung Pengiriman Pasangan
+                </p>
+                <p class="mt-1 text-xs sm:text-sm text-bone/90 leading-relaxed">
+                  Pesanan <strong>Adit (Bangunan)</strong> &amp; <strong>bojone adit (bangunan)</strong> dapat dikirim bersama dalam satu paket.
+                </p>
+                <label class="mt-2.5 flex items-start gap-2.5 p-2.5 rounded-lg bg-void/70 border border-amberGold/30 cursor-pointer select-none">
+                  <input id="input-gabung-paket" type="checkbox" class="mt-0.5 w-4 h-4 rounded accent-[#C8923E] cursor-pointer shrink-0" />
+                  <span class="text-xs sm:text-sm font-medium text-bone leading-snug">
+                    Gabung pengiriman paket dengan pasangan (Adit / Istri) ke satu alamat
+                  </span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <form id="form-address" novalidate class="space-y-4">
+            <!-- Nama Lengkap Penerima -->
+            <div>
+              <label for="addr-nama-penerima" class="block text-sm font-semibold text-bone mb-1.5">
+                Nama Lengkap Penerima Paket <span class="text-crimson">*</span>
+              </label>
+              <input
+                id="addr-nama-penerima"
+                type="text"
+                required
+                autocomplete="name"
+                placeholder="Contoh: Muhammad Habibullah"
+                class="w-full min-h-[48px] px-3.5 py-2.5 rounded-xl bg-obsidian border border-bronzeBorder text-base text-bone placeholder:text-mutedStone/60 focus:outline-none focus:border-bronze focus:ring-2 focus:ring-bronze/25 transition"
+              />
+              <p class="mt-1 text-xs text-mutedStone">
+                List PO menggunakan nama panggilan/julukan. Wajib isi <strong class="text-bone">nama asli penerima</strong> untuk resi kurir.
+              </p>
+              <p id="err-addr-nama" class="hidden mt-1 text-xs font-medium text-[#F29B9B]"></p>
+            </div>
+
+            <!-- Nomor WhatsApp Aktif -->
+            <div>
+              <label for="addr-wa" class="block text-sm font-semibold text-bone mb-1.5">
+                Nomor WhatsApp Aktif <span class="text-crimson">*</span>
+              </label>
+              <input
+                id="addr-wa"
+                type="tel"
+                inputmode="numeric"
+                required
+                autocomplete="tel"
+                placeholder="Contoh: 081234567890"
+                class="w-full min-h-[48px] px-3.5 py-2.5 rounded-xl bg-obsidian border border-bronzeBorder font-mono text-base text-bone placeholder:font-sans placeholder:text-mutedStone/60 focus:outline-none focus:border-bronze focus:ring-2 focus:ring-bronze/25 transition"
+              />
+              <p class="mt-1 text-xs text-amberGold/95">
+                4 digit terakhir nomor ini nanti bisa dipakai untuk login cek status &amp; resi. (Diawali <span class="font-mono">08</span> atau <span class="font-mono">628</span>, 10–15 digit).
+              </p>
+              <p id="err-addr-wa" class="hidden mt-1 text-xs font-medium text-[#F29B9B]"></p>
+            </div>
+
+            <!-- Alamat Lengkap -->
+            <div>
+              <label for="addr-alamat" class="block text-sm font-semibold text-bone mb-1.5">
+                Alamat Lengkap (Jalan / Dusun / No. Rumah / Patokan) <span class="text-crimson">*</span>
+              </label>
+              <textarea
+                id="addr-alamat"
+                rows="3"
+                required
+                placeholder="Contoh: Jl. Majapahit Gg. 3 No. 14, Dusun Krajan (Sebelah Masjid Al-Ikhlas)"
+                class="w-full px-3.5 py-2.5 rounded-xl bg-obsidian border border-bronzeBorder text-base text-bone placeholder:text-mutedStone/60 focus:outline-none focus:border-bronze focus:ring-2 focus:ring-bronze/25 transition resize-y"
+              ></textarea>
+              <p id="err-addr-alamat" class="hidden mt-1 text-xs font-medium text-[#F29B9B]"></p>
+            </div>
+
+            <!-- Grid: RT/RW & Desa/Kelurahan -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="addr-rtrw" class="block text-sm font-semibold text-bone mb-1.5">
+                  RT / RW <span class="text-mutedStone font-normal text-xs">(Disarankan)</span>
+                </label>
+                <input
+                  id="addr-rtrw"
+                  type="text"
+                  placeholder="Contoh: RT 02 / RW 05"
+                  class="w-full min-h-[48px] px-3.5 py-2.5 rounded-xl bg-obsidian border border-bronzeBorder text-base text-bone placeholder:text-mutedStone/60 focus:outline-none focus:border-bronze focus:ring-2 focus:ring-bronze/25 transition"
+                />
+              </div>
+
+              <div>
+                <label for="addr-desa" class="block text-sm font-semibold text-bone mb-1.5">
+                  Desa / Kelurahan <span class="text-crimson">*</span>
+                </label>
+                <input
+                  id="addr-desa"
+                  type="text"
+                  required
+                  placeholder="Contoh: Sooko"
+                  class="w-full min-h-[48px] px-3.5 py-2.5 rounded-xl bg-obsidian border border-bronzeBorder text-base text-bone placeholder:text-mutedStone/60 focus:outline-none focus:border-bronze focus:ring-2 focus:ring-bronze/25 transition"
+                />
+                <p id="err-addr-desa" class="hidden mt-1 text-xs font-medium text-[#F29B9B]"></p>
+              </div>
+            </div>
+
+            <!-- Grid: Kecamatan & Kota/Kabupaten -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="addr-kecamatan" class="block text-sm font-semibold text-bone mb-1.5">
+                  Kecamatan <span class="text-crimson">*</span>
+                </label>
+                <input
+                  id="addr-kecamatan"
+                  type="text"
+                  required
+                  placeholder="Contoh: Sooko"
+                  class="w-full min-h-[48px] px-3.5 py-2.5 rounded-xl bg-obsidian border border-bronzeBorder text-base text-bone placeholder:text-mutedStone/60 focus:outline-none focus:border-bronze focus:ring-2 focus:ring-bronze/25 transition"
+                />
+                <p id="err-addr-kecamatan" class="hidden mt-1 text-xs font-medium text-[#F29B9B]"></p>
+              </div>
+
+              <div>
+                <label for="addr-kota" class="block text-sm font-semibold text-bone mb-1.5">
+                  Kota / Kabupaten <span class="text-crimson">*</span>
+                </label>
+                <input
+                  id="addr-kota"
+                  type="text"
+                  required
+                  placeholder="Contoh: Kab. Mojokerto"
+                  class="w-full min-h-[48px] px-3.5 py-2.5 rounded-xl bg-obsidian border border-bronzeBorder text-base text-bone placeholder:text-mutedStone/60 focus:outline-none focus:border-bronze focus:ring-2 focus:ring-bronze/25 transition"
+                />
+                <p id="err-addr-kota" class="hidden mt-1 text-xs font-medium text-[#F29B9B]"></p>
+              </div>
+            </div>
+
+            <!-- Grid: Provinsi & Kode Pos -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="addr-provinsi" class="block text-sm font-semibold text-bone mb-1.5">
+                  Provinsi <span class="text-crimson">*</span>
+                </label>
+                <input
+                  id="addr-provinsi"
+                  type="text"
+                  required
+                  placeholder="Contoh: Jawa Timur"
+                  class="w-full min-h-[48px] px-3.5 py-2.5 rounded-xl bg-obsidian border border-bronzeBorder text-base text-bone placeholder:text-mutedStone/60 focus:outline-none focus:border-bronze focus:ring-2 focus:ring-bronze/25 transition"
+                />
+                <p id="err-addr-provinsi" class="hidden mt-1 text-xs font-medium text-[#F29B9B]"></p>
+              </div>
+
+              <div>
+                <label for="addr-kodepos" class="block text-sm font-semibold text-bone mb-1.5">
+                  Kode Pos <span class="text-crimson">*</span>
+                </label>
+                <input
+                  id="addr-kodepos"
+                  type="text"
+                  inputmode="numeric"
+                  maxlength="5"
+                  required
+                  placeholder="5 digit angka (misal: 61361)"
+                  class="w-full min-h-[48px] px-3.5 py-2.5 rounded-xl bg-obsidian border border-bronzeBorder font-mono text-base text-bone placeholder:font-sans placeholder:text-mutedStone/60 focus:outline-none focus:border-bronze focus:ring-2 focus:ring-bronze/25 transition tabular-nums"
+                />
+                <p id="err-addr-kodepos" class="hidden mt-1 text-xs font-medium text-[#F29B9B]"></p>
+              </div>
+            </div>
+
+            <!-- Catatan Tambahan -->
+            <div>
+              <label for="addr-catatan" class="block text-sm font-semibold text-bone mb-1.5">
+                Catatan Tambahan <span class="text-mutedStone font-normal text-xs">(Opsional)</span>
+              </label>
+              <textarea
+                id="addr-catatan"
+                rows="2"
+                placeholder="Contoh: Titip di pos satpam / hubungi WA sebelum kurir sampai..."
+                class="w-full px-3.5 py-2.5 rounded-xl bg-obsidian border border-bronzeBorder text-base text-bone placeholder:text-mutedStone/60 focus:outline-none focus:border-bronze focus:ring-2 focus:ring-bronze/25 transition resize-y"
+              ></textarea>
+            </div>
+
+            <!-- Konfirmasi -->
+            <div class="pt-1">
+              <label class="flex items-start gap-3 p-3.5 rounded-xl bg-obsidian border border-bronzeBorder hover:border-bronze/50 transition cursor-pointer select-none">
+                <input id="addr-confirm" type="checkbox" required class="mt-0.5 w-5 h-5 rounded accent-[#B89B74] cursor-pointer shrink-0" />
+                <span class="text-xs sm:text-sm text-bone/90 leading-relaxed">
+                  Saya memastikan alamat &amp; nomor WhatsApp di atas sudah benar untuk pengiriman paket baju PO.
+                </span>
+              </label>
+              <p id="err-addr-confirm" class="hidden mt-1.5 text-xs font-medium text-[#F29B9B]"></p>
+            </div>
+
+            <button
+              id="btn-submit-address"
+              type="submit"
+              class="w-full min-h-[54px] px-6 py-3.5 rounded-xl bg-gradient-to-b from-[#F0E3CE] via-bone to-[#BFA37D] hover:from-[#F8EFE0] hover:to-[#CBAE87] active:scale-[0.99] text-void font-serifTitle font-extrabold text-sm sm:text-base tracking-[0.07em] uppercase shadow-glow-bone flex items-center justify-center gap-2.5 transition disabled:opacity-55 cursor-pointer"
+            >
+              <svg id="spinner-address" class="hidden w-5 h-5 animate-spin text-void" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-80" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+              </svg>
+              <span id="label-submit-address">Simpan Alamat &amp; Lanjut Pembayaran</span>
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <!-- ================================================================= -->
+      <!-- PANEL 2: MENUNGGU_BAYAR & PERLU_REVISI (INFO BAYAR + UPLOAD BUKTI)-->
+      <!-- ================================================================= -->
+      <section id="panel-payment" class="hidden space-y-5">
+        <!-- Banner Status Normal (MENUNGGU_BAYAR) -->
+        <div id="banner-menunggu-bayar" class="hidden rounded-2xl bg-[#1C150C] border border-amberGold/45 p-4 sm:p-5 shadow-glow-amber">
+          <div class="flex items-start gap-3.5">
+            <div class="w-10 h-10 rounded-xl bg-amberGold/15 border border-amberGold/40 text-amberGold flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div>
+              <span class="font-mono text-[10px] tracking-[0.2em] uppercase text-amberGold font-bold">
+                STEP 2 • MENUNGGU PEMBAYARAN
+              </span>
+              <p class="mt-1 text-sm sm:text-base font-semibold text-bone leading-snug">
+                Informasi pengiriman sudah diinput. Silakan lakukan pembayaran dan upload bukti pembayaran di bawah ini.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Banner Status Revisi (PERLU_REVISI) -->
+        <div id="banner-perlu-revisi" class="hidden rounded-2xl bg-[#1F0E0E] border border-crimson/55 p-4 sm:p-5 shadow-glow-crimson">
+          <div class="flex items-start gap-3.5">
+            <div class="w-10 h-10 rounded-xl bg-crimson/20 border border-crimson/50 text-crimson flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+              </svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <span class="inline-block px-2 py-0.5 rounded bg-crimson/25 border border-crimson/45 font-mono text-[10px] tracking-[0.18em] uppercase text-[#F7B6B6] font-bold">
+                PERLU REVISI BUKTI BAYAR
+              </span>
+              <h3 class="mt-1.5 font-serifTitle text-base sm:text-lg font-bold text-bone">
+                Bukti Pembayaran Perlu Direvisi
+              </h3>
+              <div class="mt-2.5 rounded-xl bg-void/80 border border-crimson/35 p-3.5">
+                <p class="font-mono text-[10px] uppercase tracking-widest text-[#F09A9A] mb-1">Catatan dari Admin:</p>
+                <p id="revisi-admin-note" class="text-xs sm:text-sm text-bone leading-relaxed font-medium"></p>
+              </div>
+              <p class="mt-2.5 text-xs text-mutedStone">
+                Data alamat Anda sudah aman tersimpan dan tidak perlu diisi ulang. Silakan upload ulang foto bukti transfer yang jelas di bawah ini.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- KARTU INFORMASI PEMBAYARAN (QRIS + REKENING + CATATAN HARGA) -->
+        <div class="relative rounded-2xl bg-charcoal border border-bronze/30 shadow-relic p-1.5">
+          <div class="rounded-xl border border-bronzeBorder bg-gradient-to-b from-stoneSurface/75 to-charcoal p-5 sm:p-6 space-y-5">
+            <div class="flex items-center justify-between gap-2 flex-wrap">
+              <div class="flex items-center gap-2.5">
+                <span class="w-8 h-8 rounded-lg bg-void border border-bronze/40 text-bronze flex items-center justify-center">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                  </svg>
+                </span>
+                <h3 class="font-serifTitle text-base sm:text-lg font-bold text-bone">Informasi Pembayaran</h3>
+              </div>
+              <span class="font-mono text-[10px] tracking-widest uppercase text-mutedStone">QRIS / Transfer</span>
+            </div>
+
+            <!-- Grid QRIS + Rekening -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <!-- Slot QRIS -->
+              <div class="rounded-xl bg-obsidian border border-bronzeBorder p-4 flex flex-col items-center text-center justify-between">
+                <div class="w-full">
+                  <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-bronze font-semibold mb-2.5">Pembayaran via QRIS</p>
+
+                  <!-- Jika gambar QRIS tersedia -->
+                  <div id="qris-loaded-wrap" class="hidden flex-col items-center">
+                    <button id="btn-zoom-qris" type="button" class="group relative rounded-xl overflow-hidden border border-bronze/40 bg-white p-2 max-w-[200px] mx-auto cursor-pointer" title="Klik untuk memperbesar QRIS">
+                      <img id="qris-img" src="" alt="QRIS Pembayaran INDEPENDENT" class="w-full h-auto object-contain rounded-lg" />
+                      <span class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-xs font-semibold gap-1">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        Perbesar
+                      </span>
+                    </button>
+                    <div class="mt-2.5 flex items-center justify-center gap-2">
+                      <button id="btn-zoom-qris-text" type="button" class="px-2.5 py-1.5 rounded-lg bg-stoneSurface border border-bronzeBorder text-[11px] font-semibold text-bone hover:border-bronze transition cursor-pointer">
+                        Perbesar QRIS
+                      </button>
+                      <a id="btn-download-qris" href="#" download="QRIS-INDEPENDENT-PO.png" class="px-2.5 py-1.5 rounded-lg bg-bronze/20 border border-bronze/40 text-[11px] font-semibold text-bone hover:bg-bronze/30 transition">
+                        Unduh QRIS
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-- Placeholder jika QRIS belum diset di CONFIG -->
+                  <div id="qris-placeholder-wrap" class="rounded-xl border border-dashed border-bronze/40 bg-charcoal/80 px-4 py-6 flex flex-col items-center justify-center">
+                    <svg class="w-10 h-10 text-bronze/60 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z" />
+                    </svg>
+                    <p class="text-xs font-semibold text-bone">Slot Gambar QRIS</p>
+                    <p class="mt-1 text-[11px] text-mutedStone leading-relaxed">
+                      Pasang path/URL gambar QRIS Anda di <code class="font-mono text-bronze">CONFIG.PAYMENT.qrisImage</code>
+                    </p>
+                  </div>
+                </div>
+
+                <p id="qris-caption" class="mt-3 text-[11px] text-mutedStone leading-relaxed"></p>
+
+                <!-- Uji Preview Gambar QRIS Lokal (Khusus Mode Simulasi) -->
+              </div>
+
+              <!-- Daftar Rekening Bank / E-Wallet -->
+              <div class="flex flex-col justify-between gap-3">
+                <div id="payment-accounts-list" class="space-y-2.5">
+                  <!-- Dirender oleh JavaScript dari CONFIG.PAYMENT.accounts -->
+                </div>
+
+                <!-- Catatan Harga & Pricelist -->
+                <div class="rounded-xl bg-obsidian border border-bronzeBorder p-3.5 text-left">
+                  <p class="font-mono text-[10px] uppercase tracking-[0.18em] text-bronze font-semibold">Catatan Nominal</p>
+                  <p id="payment-price-note" class="mt-1 text-xs text-bone/90 leading-relaxed"></p>
+                  <ul id="payment-price-list" class="mt-2.5 pt-2.5 border-t border-bronzeBorder space-y-1 text-xs text-mutedStone">
+                    <!-- Dirender dari CONFIG.PAYMENT.priceList -->
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FORM UPLOAD BUKTI PEMBAYARAN -->
+        <div class="relative rounded-2xl bg-charcoal border border-bronze/30 shadow-relic p-1.5">
+          <div class="rounded-xl border border-bronzeBorder bg-gradient-to-b from-stoneSurface/70 to-charcoal p-5 sm:p-6">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="w-9 h-9 rounded-xl bg-void border border-bronze/40 text-bronze font-serifTitle font-bold text-base flex items-center justify-center shrink-0">2</span>
+              <div>
+                <h3 class="font-serifTitle text-base sm:text-lg font-bold text-bone">
+                  Upload Bukti Pembayaran
+                </h3>
+                <p class="text-xs sm:text-sm text-mutedStone">
+                  Foto otomatis dikompres agar upload cepat &amp; tersimpan aman di Google Drive panitia.
+                </p>
+              </div>
+            </div>
+
+            <form id="form-payment" novalidate class="space-y-4">
+              <!-- Dropzone / Upload Gambar -->
+              <div>
+                <label class="block text-sm font-semibold text-bone mb-1.5">
+                  Screenshot / Foto Bukti Transfer <span class="text-crimson">*</span>
+                </label>
+
+                <div
+                  id="upload-dropzone"
+                  tabindex="0"
+                  role="button"
+                  aria-label="Pilih atau seret foto bukti pembayaran"
+                  class="relative rounded-xl border-2 border-dashed border-bronze/45 bg-obsidian hover:border-bronze hover:bg-stoneSurface/60 p-6 text-center transition cursor-pointer"
+                >
+                  <input id="input-proof-file" type="file" accept="image/*" class="hidden" />
+                  <div class="mx-auto w-12 h-12 rounded-xl bg-stoneSurface border border-bronzeBorder text-bronze flex items-center justify-center mb-2.5">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <p class="text-sm font-semibold text-bone">Ketuk untuk pilih foto atau seret ke sini</p>
+                  <p class="mt-1 text-xs text-mutedStone">Format JPG, PNG, WebP • Kompresi otomatis maks. 1200px</p>
+                </div>
+
+                <!-- Preview Thumbnail Bukti Bayar -->
+                <div id="proof-preview-card" class="hidden rounded-xl bg-obsidian border border-bronze/40 p-3.5">
+                  <div class="flex flex-col sm:flex-row items-center gap-4">
+                    <img id="proof-preview-img" src="" alt="Preview Bukti Bayar" class="w-28 h-28 object-cover rounded-lg border border-bronzeBorder bg-void shrink-0" />
+                    <div class="flex-1 text-center sm:text-left min-w-0">
+                      <p id="proof-file-name" class="text-sm font-semibold text-bone truncate"></p>
+                      <p id="proof-size-info" class="mt-1 font-mono text-xs text-moss"></p>
+                      <div class="mt-3 flex flex-wrap items-center justify-center sm:justify-start gap-2">
+                        <button id="btn-change-proof" type="button" class="px-3 py-1.5 rounded-lg bg-stoneSurface border border-bronze/40 text-xs font-semibold text-bone hover:bg-bronze/15 transition cursor-pointer">
+                          Ganti Foto
+                        </button>
+                        <button id="btn-remove-proof" type="button" class="px-3 py-1.5 rounded-lg bg-crimson/15 border border-crimson/40 text-xs font-semibold text-[#F4B4B4] hover:bg-crimson/25 transition cursor-pointer">
+                          Hapus
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <p id="err-proof-file" class="hidden mt-1.5 text-xs font-medium text-[#F29B9B]"></p>
+              </div>
+
+              <!-- Metode Pembayaran -->
+              <div>
+                <label for="pay-metode" class="block text-sm font-semibold text-bone mb-1.5">
+                  Metode Pembayaran <span class="text-crimson">*</span>
+                </label>
+                <select
+                  id="pay-metode"
+                  required
+                  class="w-full min-h-[48px] px-3.5 py-2.5 rounded-xl bg-obsidian border border-bronzeBorder text-base text-bone focus:outline-none focus:border-bronze focus:ring-2 focus:ring-bronze/25 transition"
+                >
+                  <option value="QRIS">QRIS</option>
+                  <option value="Transfer Bank">Transfer Bank</option>
+                  <option value="E-Wallet / DANA / OVO / GoPay / ShopeePay">E-Wallet / DANA / OVO / GoPay / ShopeePay</option>
+                </select>
+              </div>
+
+              <!-- Catatan Pembayaran -->
+              <div>
+                <label for="pay-catatan" class="block text-sm font-semibold text-bone mb-1.5">
+                  Catatan Pembayaran <span class="text-mutedStone font-normal text-xs">(Opsional)</span>
+                </label>
+                <input
+                  id="pay-catatan"
+                  type="text"
+                  placeholder="Contoh: Transfer a.n. Muhammad Habib / bayar gabung 2 kaos"
+                  class="w-full min-h-[48px] px-3.5 py-2.5 rounded-xl bg-obsidian border border-bronzeBorder text-base text-bone placeholder:text-mutedStone/60 focus:outline-none focus:border-bronze focus:ring-2 focus:ring-bronze/25 transition"
+                />
+              </div>
+
+              <button
+                id="btn-submit-payment"
+                type="submit"
+                class="w-full min-h-[54px] px-6 py-3.5 rounded-xl bg-gradient-to-b from-[#F0E3CE] via-bone to-[#BFA37D] hover:from-[#F8EFE0] hover:to-[#CBAE87] active:scale-[0.99] text-void font-serifTitle font-extrabold text-sm sm:text-base tracking-[0.07em] uppercase shadow-glow-bone flex items-center justify-center gap-2.5 transition disabled:opacity-55 cursor-pointer"
+              >
+                <svg id="spinner-payment" class="hidden w-5 h-5 animate-spin text-void" fill="none" viewBox="0 0 24 24">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                  <path class="opacity-80" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+                </svg>
+                <span id="label-submit-payment">Kirim Bukti Pembayaran</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================= -->
+      <!-- PANEL 3: MENUNGGU_KONFIRMASI (AMBER WAX SEAL — LOCKED)            -->
+      <!-- ================================================================= -->
+      <section id="panel-menunggu-konfirmasi" class="hidden relative rounded-2xl bg-charcoal border border-amberGold/45 shadow-glow-amber p-1.5">
+        <div class="rounded-xl border border-amberGold/25 bg-[radial-gradient(ellipse_at_top,rgba(200,146,62,0.16),rgba(20,18,17,0.98)_65%)] p-6 sm:p-7 text-center">
+          <!-- Amber Wax Seal Icon -->
+          <div class="mx-auto w-16 h-16 rounded-full bg-amberGold/15 border-2 border-amberGold/60 flex items-center justify-center mb-4">
+            <svg class="w-8 h-8 text-amberGold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+            </svg>
+          </div>
+
+          <span class="inline-block px-3 py-1 rounded-full bg-amberGold/15 border border-amberGold/40 font-mono text-[10px] sm:text-[11px] font-bold tracking-[0.2em] text-amberGold uppercase">
+            MENUNGGU VERIFIKASI ADMIN
+          </span>
+          <h3 class="mt-3 font-serifTitle text-xl sm:text-2xl font-bold text-bone">
+            Pembayaran Berhasil Dikirim
+          </h3>
+          <p class="mt-2 text-sm sm:text-base text-bone/90 max-w-md mx-auto leading-relaxed">
+            Pembayaran berhasil dikirim, silakan tunggu konfirmasi dari admin.
+          </p>
+
+          <!-- Meta Info Ringkas (Non-Sensitif) -->
+          <div class="mt-5 max-w-md mx-auto rounded-xl bg-obsidian/90 border border-bronzeBorder divide-y divide-bronzeBorder text-xs sm:text-sm text-left">
+            <div class="px-4 py-2.5 flex items-center justify-between gap-2">
+              <span class="text-mutedStone">Status Form Upload</span>
+              <span class="font-mono text-amberGold font-semibold">Terkunci (Dalam Pengecekan)</span>
+            </div>
+            <div class="px-4 py-2.5 flex items-center justify-between gap-2">
+              <span class="text-mutedStone">Waktu Upload Bukti</span>
+              <span id="wait-waktu-bayar" class="font-mono text-bone text-right">-</span>
+            </div>
+            <div class="px-4 py-2.5 flex items-center justify-between gap-2">
+              <span class="text-mutedStone">Metode Bayar</span>
+              <span id="wait-metode-bayar" class="font-semibold text-bone text-right">-</span>
+            </div>
+            <div class="px-4 py-2.5 flex items-center justify-between gap-2">
+              <span class="text-mutedStone">WA Terdaftar</span>
+              <span id="wait-wa-masked" class="font-mono text-bone text-right">-</span>
+            </div>
+          </div>
+
+          <p class="mt-4 text-xs text-mutedStone max-w-md mx-auto leading-relaxed">
+            Anda dapat masuk kembali kapan saja menggunakan <strong class="text-bone">Kode Unik</strong> atau <strong class="text-bone">Nama + 4 Digit Terakhir WA</strong> untuk mengecek status konfirmasi dan nomor resi paket Anda.
+          </p>
+
+          <div class="mt-5">
+            <button
+              id="btn-refresh-status-wait"
+              type="button"
+              class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-stoneSurface border border-bronze/40 hover:border-bronze text-xs sm:text-sm font-semibold text-bone transition cursor-pointer"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+              </svg>
+              <span>Periksa Status Terbaru</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================= -->
+      <!-- PANEL 4: TERKONFIRMASI (MOSS / RELIC GREEN VERIFIED SEAL)         -->
+      <!-- ================================================================= -->
+      <section id="panel-terkonfirmasi" class="hidden relative rounded-2xl bg-charcoal border border-moss/50 shadow-glow-moss p-1.5">
+        <div class="rounded-xl border border-moss/30 bg-[radial-gradient(ellipse_at_top,rgba(91,140,104,0.18),rgba(20,18,17,0.98)_65%)] p-6 sm:p-7 text-center">
+          <div class="mx-auto w-16 h-16 rounded-full bg-moss/20 border-2 border-moss/70 flex items-center justify-center mb-4 shadow-glow-moss">
+            <svg class="w-8 h-8 text-[#8ED09E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+
+          <span class="inline-block px-3 py-1 rounded-full bg-moss/20 border border-moss/45 font-mono text-[10px] sm:text-[11px] font-bold tracking-[0.2em] text-[#98D8A7] uppercase">
+            VERIFIED • PEMBAYARAN TERKONFIRMASI
+          </span>
+          <h3 class="mt-3 font-gothic text-xl sm:text-2xl font-bold tracking-wider text-bone">
+            SEMUA STEP BERHASIL
+          </h3>
+          <p class="mt-2 text-sm sm:text-base text-bone/95 max-w-md mx-auto leading-relaxed">
+            Pembayaran telah dikonfirmasi oleh admin. Semua step sudah berhasil, silakan tunggu informasi berikutnya.
+          </p>
+
+          <div class="mt-5 max-w-md mx-auto rounded-xl bg-obsidian/90 border border-bronzeBorder p-4 text-left space-y-2">
+            <div class="flex items-start gap-2.5 text-xs sm:text-sm text-mutedStone">
+              <svg class="w-4 h-4 text-[#8ED09E] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+              </svg>
+              <p class="leading-relaxed">
+                Pesanan Anda sedang dipersiapkan untuk proses packing &amp; pengiriman. Begitu paket diserahkan ke ekspedisi, <strong class="text-bone">Nomor Resi Pengiriman</strong> akan otomatis muncul di halaman ini.
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-5">
+            <button
+              id="btn-refresh-status-confirmed"
+              type="button"
+              class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-stoneSurface border border-bronze/40 hover:border-bronze text-xs sm:text-sm font-semibold text-bone transition cursor-pointer"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+              </svg>
+              <span>Cek Update Nomor Resi</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================= -->
+      <!-- PANEL 5: DIKIRIM (KARTU RESI PENGIRIMAN DARK GOTHIC)              -->
+      <!-- ================================================================= -->
+      <section id="panel-dikirim" class="hidden relative rounded-2xl bg-charcoal border border-moss/55 shadow-glow-moss p-1.5">
+        <div class="rounded-xl border border-moss/30 bg-[radial-gradient(ellipse_at_top,rgba(91,140,104,0.20),rgba(13,11,11,0.98)_65%)] p-5 sm:p-7">
+          <div class="text-center">
+            <div class="mx-auto w-16 h-16 rounded-full bg-moss/20 border-2 border-moss/75 flex items-center justify-center mb-3.5 shadow-glow-moss">
+              <svg class="w-8 h-8 text-[#98D8A7]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+              </svg>
+            </div>
+            <span class="inline-block px-3 py-1 rounded-full bg-moss/20 border border-moss/45 font-mono text-[10px] sm:text-[11px] font-bold tracking-[0.2em] text-[#98D8A7] uppercase">
+              COMPLETED • PAKET DALAM PENGIRIMAN
+            </span>
+            <h3 class="mt-2.5 font-gothic text-xl sm:text-2xl font-bold tracking-wider text-bone">
+              PAKET SUDAH DIKIRIM!
+            </h3>
+            <p class="mt-1 text-xs sm:text-sm text-mutedStone">
+              Gunakan nomor resi di bawah ini untuk memantau perjalanan paket Anda.
+            </p>
+          </div>
+
+          <!-- Kartu Resi Pengiriman -->
+          <div class="mt-5 rounded-xl bg-void border border-dashed border-bronze/55 p-4 sm:p-5">
+            <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-bronzeBorder">
+              <span class="font-mono text-[10px] tracking-[0.2em] uppercase text-bronze">KARTU RESI PENGIRIMAN</span>
+              <span id="ship-ekspedisi-badge" class="px-2.5 py-0.5 rounded bg-bronze/20 border border-bronze/40 font-mono text-xs font-bold text-bone uppercase">J&amp;T EXPRESS</span>
+            </div>
+
+            <div class="mt-4 text-center py-2">
+              <p class="font-mono text-[10px] uppercase tracking-[0.22em] text-mutedStone">Nomor Resi</p>
+              <p id="ship-resi-number" class="mt-1.5 font-mono text-xl sm:text-2xl font-bold tracking-[0.12em] text-bone break-all select-all">
+                JP1234567890
+              </p>
+            </div>
+
+            <!-- Catatan Pengiriman Opsional dari Admin -->
+            <div id="ship-note-wrap" class="hidden mt-3 pt-3 border-t border-bronzeBorder text-xs text-mutedStone text-center">
+              <span class="text-bronze font-semibold">Info Admin:</span> <span id="ship-note-text" class="text-bone"></span>
+            </div>
+
+            <!-- Tombol Salin Resi & Lacak Paket -->
+            <div class="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <button
+                id="btn-copy-resi"
+                type="button"
+                class="min-h-[48px] px-4 py-2.5 rounded-xl bg-gradient-to-b from-[#F0E3CE] via-bone to-[#BFA37D] hover:from-[#F8EFE0] hover:to-[#CBAE87] text-void font-semibold text-sm flex items-center justify-center gap-2 transition cursor-pointer"
+              >
+                <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2" />
+                </svg>
+                <span>Salin Nomor Resi</span>
+              </button>
+
+              <a
+                id="btn-track-resi"
+                href="https://cekresi.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="min-h-[48px] px-4 py-2.5 rounded-xl bg-moss/20 border border-moss/55 hover:bg-moss/30 text-[#B4E8BF] font-semibold text-sm flex items-center justify-center gap-2 transition"
+              >
+                <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+                <span>Lacak Paket (CekResi)</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- =================================================================== -->
+    <!-- BLOK HUBUNGI ADMIN VIA INSTAGRAM (SELALU TAMPIL DI SEMUA LAYAR)     -->
+    <!-- =================================================================== -->
+    <section aria-label="Bantuan Admin Instagram" class="rounded-2xl bg-charcoal/95 border border-bronzeBorder p-4 sm:p-5">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 rounded-xl bg-obsidian border border-bronze/35 text-bronze flex items-center justify-center shrink-0">
+            <!-- Instagram SVG Icon -->
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-serifTitle text-sm sm:text-base font-bold text-bone">Hubungi Admin (Instagram)</h3>
+            <p class="mt-0.5 text-xs text-mutedStone leading-relaxed">
+              Lupa kode unik, salah ketik alamat/WA, kendala pembayaran, atau butuh revisi data? DM langsung admin via Instagram.
+            </p>
+          </div>
+        </div>
+
+        <div id="admin-ig-buttons" class="flex flex-wrap items-center gap-2 shrink-0">
+          <!-- Dirender dinamis dari CONFIG.ADMINS_IG -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="pt-2 text-center space-y-1.5">
+      <div class="flex items-center justify-center gap-2 text-bronze/75">
+        <span class="h-px w-10 bg-bronze/35"></span>
+        <span class="font-serifTitle text-[11px] tracking-[0.25em] uppercase">INDEPENDENT • MMXVIII</span>
+        <span class="h-px w-10 bg-bronze/35"></span>
+      </div>
+      <p class="text-xs text-mutedStone">Panitia PO Baju Alumni Sudah Boyong — Data alamat &amp; bukti pembayaran bersifat privat.</p>
+    </footer>
+  </main>
+
+  <!-- ===================================================================== -->
+  <!-- LIGHTBOX ZOOM QRIS                                                    -->
+  <!-- ===================================================================== -->
+  <div id="modal-qris-zoom" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-xs">
+    <div class="relative w-full max-w-md rounded-2xl bg-charcoal border border-bronze/40 p-4 sm:p-5 shadow-relic text-center">
+      <button id="btn-close-qris-zoom" type="button" aria-label="Tutup preview QRIS" class="absolute top-3 right-3 p-2 rounded-xl bg-obsidian text-mutedStone hover:text-bone cursor-pointer">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+      </button>
+      <p class="font-serifTitle text-sm font-bold text-bone mb-3">Scan QRIS Pembayaran</p>
+      <div class="rounded-xl bg-white p-3 inline-block max-w-full">
+        <img id="qris-zoom-img" src="" alt="QRIS Zoom" class="max-h-[65vh] w-auto object-contain mx-auto rounded" />
+      </div>
+      <p id="qris-zoom-caption" class="mt-3 text-xs text-mutedStone"></p>
+    </div>
+  </div>
+
+
+
+  <!-- ===================================================================== -->
+  <!-- LOGIKA APLIKASI JAVASCRIPT                                            -->
+  <!-- ===================================================================== -->
+  <script>
+    /**
+     * =========================================================================
+     * 1. KONFIGURASI UTAMA (EDIT BAGIAN INI SEBELUM DEPLOY LIVE)
+     * =========================================================================
+     */
+    const CONFIG = {
+      // WAJIB diisi dengan URL Web App Google Apps Script (hasil Deploy).
+      APPS_SCRIPT_URL: "https://script.google.com/macros/s/AKfycbwR8vkG48s-zuCv7cF2ibl1pu-M2vajaCMOoKB2UH357_qiHAdEMWh-FkrjKDoMg0kk/exec",
+
+      // Aset gambar opsional (misal: "./poster.png", "./depan 1 (2).jpeg", "./desaign depan.png", "./stiker cutting.png")
+      ASSETS: {
+        posterBg: "./poster.jpg",
+        logoHeader: "",
+        artworkPreview: "./design_depan.jpg",
+        emblemStamp: "./logo_akar.png"
+      },
+
+      // Kontak Admin Instagram (Direct Message)
+      ADMINS_IG: [
+        {
+          handle: "sang_buluputih",
+          url: "https://ig.me/m/sang_buluputih",
+          profileUrl: "https://instagram.com/sang_buluputih"
+        },
+        {
+          handle: "abidibrahimovic",
+          url: "https://ig.me/m/abidibrahimovic",
+          profileUrl: "https://instagram.com/abidibrahimovic"
+        }
+      ],
+
+      // Pengaturan Informasi Pembayaran Manual (Step 2)
+      PAYMENT: {
+        qrisImage: "", // Contoh: "./qris.png" atau URL gambar QRIS Anda
+        qrisCaption: "Scan QRIS di atas via Mobile Banking / E-Wallet (GoPay, OVO, DANA, ShopeePay)",
+        accounts: [
+          {
+            bank: "Bank / E-Wallet (Edit di CONFIG)",
+            number: "0000-0000-0000",
+            holder: "a.n. Nama Penerima (Edit di CONFIG)"
+          }
+        ],
+        priceNote: "Nominal sesuai ukuran & ongkir yang diinfokan panitia (Edit catatan harga di CONFIG.PAYMENT)",
+        priceList: [
+          { label: "Lengan Pendek (M–XL)", price: "Rp ... (Edit di CONFIG)" },
+          { label: "Lengan Panjang (M–XL)", price: "Rp ... (Edit di CONFIG)" },
+          { label: "XXL / XXXXXL", price: "Rp ... (Edit di CONFIG)" }
+        ]
+      }
+    };
+
+    /**
+     * =========================================================================
+     * 2. DAFTAR NAMA PO PUBLIK (HANYA ID & NAMA — TANPA DATA PRIBADI/STATUS)
+     *    Digunakan untuk dropdown pencarian prediktif di Tab "Nama + 4 Digit WA".
+     * =========================================================================
+     */
+    const PO_NAMES = [
+      { id: "JT-01", nama: "Habib" },
+      { id: "JT-02", nama: "Labib" },
+      { id: "JT-03", nama: "Dhosol" },
+      { id: "JT-04", nama: "Minto" },
+      { id: "JT-05", nama: "Kopek" },
+      { id: "JT-06", nama: "Wowok" },
+      { id: "JT-07", nama: "Monyet" },
+      { id: "JT-08", nama: "Asrori" },
+      { id: "JT-09", nama: "Gondrong" },
+      { id: "JT-11", nama: "Rohman" },
+      { id: "JT-12", nama: "Shodex" },
+      { id: "JT-13", nama: "Yaqin" },
+      { id: "JT-16", nama: "Bagyo" },
+      { id: "JT-17", nama: "Sopi Jbg" },
+      { id: "JT-19", nama: "Mbah Ican" },
+      { id: "JT-20", nama: "Ambon (Rif'ah)" },
+      { id: "JTG-01", nama: "Gendon" },
+      { id: "JTG-02", nama: "Dalban" },
+      { id: "JTG-03", nama: "Wawi" },
+      { id: "JTG-04", nama: "Ateng" },
+      { id: "JTG-05", nama: "Nuril" },
+      { id: "JTG-06", nama: "Abil" },
+      { id: "JTG-07", nama: "Hanip" },
+      { id: "JTG-13", nama: "Dapit" },
+      { id: "JTG-15", nama: "Pak Idris" },
+      { id: "JB-01", nama: "Aceng" },
+      { id: "LJ-02", nama: "Gendut" },
+      { id: "LJ-06", nama: "bojone adit (bangunan)" },
+      { id: "LJ-07", nama: "Adit (Bangunan)" }
+    ];
+
+    const IS_SIM_MODE = !CONFIG.APPS_SCRIPT_URL || CONFIG.APPS_SCRIPT_URL.trim() === "";
+    const PRIVACY_GENERIC_ERR = "Kode unik atau kombinasi Nama & 4 digit WA tidak cocok. Periksa kembali atau hubungi admin.";
+    const WA4_NOT_REGISTERED_ERR = "Data belum ditemukan atau belum mengisi formulir alamat. Untuk pengisian pertama kali, silakan masuk menggunakan Kode Unik / Link Personal dari panitia.";
+
+    // =========================================================================
+    // STATE APLIKASI
+    // =========================================================================
+    const state = {
+      activeLoginTab: "code", // "code" | "wa4"
+      wa4SelectedId: "",
+      wa4Filtered: [...PO_NAMES],
+      wa4DropdownOpen: false,
+      wa4ActiveIdx: -1,
+
+      // Sesi login aktif di memori (tidak menyimpan data sensitif)
+      auth: null, // { method: "code"|"wa4", kodeUnik?: string, id?: string, wa4Digit?: string }
+      buyer: null, // Non-sensitive payload dari server/simulator
+
+      // Upload gambar terkompresi
+      compressedProof: null, // { base64, mimeType, fileName, originalBytes, compressedBytes, dataUrl }
+      activeQrisUrl: "",
+      busy: false
+    };
+
+    // =========================================================================
+    // REFERENSI ELEMEN DOM
+    // =========================================================================
+    const el = {
+      toastContainer: document.getElementById("toast-container"),
+
+      heroPosterWrap: document.getElementById("hero-poster-wrap"),
+      heroPosterImg: document.getElementById("hero-poster-img"),
+      heroEmblemImg: document.getElementById("hero-emblem-img"),
+      heroEmblemSvg: document.getElementById("hero-emblem-svg"),
+      heroLogoImg: document.getElementById("hero-logo-img"),
+      heroTitleText: document.getElementById("hero-title-text"),
+      editionArtImg: document.getElementById("edition-art-img"),
+      editionArtSvg: document.getElementById("edition-art-svg"),
+      btnToggleEdition: document.getElementById("btn-toggle-edition"),
+      iconEditionChevron: document.getElementById("icon-edition-chevron"),
+      editionPreviewCard: document.getElementById("edition-preview-card"),
+
+      viewAccessGate: document.getElementById("view-access-gate"),
+      tabLoginCode: document.getElementById("tab-login-code"),
+      tabLoginWa4: document.getElementById("tab-login-wa4"),
+      gateErrorBox: document.getElementById("gate-error-box"),
+      gateErrorText: document.getElementById("gate-error-text"),
+      formLoginCode: document.getElementById("form-login-code"),
+      inputKodeUnik: document.getElementById("input-kode-unik"),
+      btnLoginCode: document.getElementById("btn-login-code"),
+      spinnerLoginCode: document.getElementById("spinner-login-code"),
+
+      formLoginWa4: document.getElementById("form-login-wa4"),
+      wa4ComboboxWrap: document.getElementById("wa4-combobox-wrap"),
+      inputWa4Name: document.getElementById("input-wa4-name"),
+      btnClearWa4Name: document.getElementById("btn-clear-wa4-name"),
+      wa4NameDropdown: document.getElementById("wa4-name-dropdown"),
+      inputWa4Digits: document.getElementById("input-wa4-digits"),
+      btnLoginWa4: document.getElementById("btn-login-wa4"),
+      spinnerLoginWa4: document.getElementById("spinner-login-wa4"),
+
+      viewBuyerPortal: document.getElementById("view-buyer-portal"),
+      buyerStatusPill: document.getElementById("buyer-status-pill"),
+      btnLogout: document.getElementById("btn-logout"),
+      buyerId: document.getElementById("buyer-id"),
+      buyerWilayah: document.getElementById("buyer-wilayah"),
+      buyerNama: document.getElementById("buyer-nama"),
+      buyerWaMaskedRow: document.getElementById("buyer-wa-masked-row"),
+      buyerWaMasked: document.getElementById("buyer-wa-masked"),
+      buyerUkuran: document.getElementById("buyer-ukuran"),
+      progressTracker: document.getElementById("progress-tracker"),
+
+      panelBelumIsi: document.getElementById("panel-belum-isi"),
+      coupleMergeBanner: document.getElementById("couple-merge-banner"),
+      inputGabungPaket: document.getElementById("input-gabung-paket"),
+      formAddress: document.getElementById("form-address"),
+      addrNamaPenerima: document.getElementById("addr-nama-penerima"),
+      addrWa: document.getElementById("addr-wa"),
+      addrAlamat: document.getElementById("addr-alamat"),
+      addrRtRw: document.getElementById("addr-rtrw"),
+      addrDesa: document.getElementById("addr-desa"),
+      addrKecamatan: document.getElementById("addr-kecamatan"),
+      addrKota: document.getElementById("addr-kota"),
+      addrProvinsi: document.getElementById("addr-provinsi"),
+      addrKodePos: document.getElementById("addr-kodepos"),
+      addrCatatan: document.getElementById("addr-catatan"),
+      addrConfirm: document.getElementById("addr-confirm"),
+      btnSubmitAddress: document.getElementById("btn-submit-address"),
+      spinnerAddress: document.getElementById("spinner-address"),
+      labelSubmitAddress: document.getElementById("label-submit-address"),
+
+      panelPayment: document.getElementById("panel-payment"),
+      bannerMenungguBayar: document.getElementById("banner-menunggu-bayar"),
+      bannerPerluRevisi: document.getElementById("banner-perlu-revisi"),
+      revisiAdminNote: document.getElementById("revisi-admin-note"),
+      qrisLoadedWrap: document.getElementById("qris-loaded-wrap"),
+      qrisPlaceholderWrap: document.getElementById("qris-placeholder-wrap"),
+      qrisImg: document.getElementById("qris-img"),
+      btnZoomQris: document.getElementById("btn-zoom-qris"),
+      btnZoomQrisText: document.getElementById("btn-zoom-qris-text"),
+      btnDownloadQris: document.getElementById("btn-download-qris"),
+      qrisCaption: document.getElementById("qris-caption"),
+      paymentAccountsList: document.getElementById("payment-accounts-list"),
+      paymentPriceNote: document.getElementById("payment-price-note"),
+      paymentPriceList: document.getElementById("payment-price-list"),
+
+      formPayment: document.getElementById("form-payment"),
+      uploadDropzone: document.getElementById("upload-dropzone"),
+      inputProofFile: document.getElementById("input-proof-file"),
+      proofPreviewCard: document.getElementById("proof-preview-card"),
+      proofPreviewImg: document.getElementById("proof-preview-img"),
+      proofFileName: document.getElementById("proof-file-name"),
+      proofSizeInfo: document.getElementById("proof-size-info"),
+      btnChangeProof: document.getElementById("btn-change-proof"),
+      btnRemoveProof: document.getElementById("btn-remove-proof"),
+      errProofFile: document.getElementById("err-proof-file"),
+      payMetode: document.getElementById("pay-metode"),
+      payCatatan: document.getElementById("pay-catatan"),
+      btnSubmitPayment: document.getElementById("btn-submit-payment"),
+      spinnerPayment: document.getElementById("spinner-payment"),
+      labelSubmitPayment: document.getElementById("label-submit-payment"),
+
+      panelMenungguKonfirmasi: document.getElementById("panel-menunggu-konfirmasi"),
+      waitWaktuBayar: document.getElementById("wait-waktu-bayar"),
+      waitMetodeBayar: document.getElementById("wait-metode-bayar"),
+      waitWaMasked: document.getElementById("wait-wa-masked"),
+      btnRefreshStatusWait: document.getElementById("btn-refresh-status-wait"),
+
+      panelTerkonfirmasi: document.getElementById("panel-terkonfirmasi"),
+      btnRefreshStatusConfirmed: document.getElementById("btn-refresh-status-confirmed"),
+
+      panelDikirim: document.getElementById("panel-dikirim"),
+      shipEkspedisiBadge: document.getElementById("ship-ekspedisi-badge"),
+      shipResiNumber: document.getElementById("ship-resi-number"),
+      shipNoteWrap: document.getElementById("ship-note-wrap"),
+      shipNoteText: document.getElementById("ship-note-text"),
+      btnCopyResi: document.getElementById("btn-copy-resi"),
+      btnTrackResi: document.getElementById("btn-track-resi"),
+
+      adminIgButtons: document.getElementById("admin-ig-buttons"),
+
+      modalQrisZoom: document.getElementById("modal-qris-zoom"),
+      btnCloseQrisZoom: document.getElementById("btn-close-qris-zoom"),
+      qrisZoomImg: document.getElementById("qris-zoom-img"),
+      qrisZoomCaption: document.getElementById("qris-zoom-caption"),
+
+
+    };
+
+    // =========================================================================
+    // 4. UTILITAS UMUM (SANITASI, CLIPBOARD, TOAST, MASKING WA, FORMAT TANGGAL)
+    // =========================================================================
+    function escapeHtml(str) {
+      return String(str ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+    function showToast(message, type = "info") {
+      const themes = {
+        success: "bg-[#111D15] border-moss/60 text-[#CBEFD4]",
+        error: "bg-[#200F0F] border-crimson/60 text-[#F6C4C4]",
+        warning: "bg-[#20170C] border-amberGold/60 text-[#F4D6A8]",
+        info: "bg-charcoal border-bronze/45 text-bone"
+      };
+      const icons = {
+        success: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M5 13l4 4L19 7" />',
+        error: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M6 18L18 6M6 6l12 12" />',
+        warning: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M12 9v2m0 4h.01M12 3l9 16H3L12 3z" />',
+        info: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />'
+      };
+      const node = document.createElement("div");
+      node.className = "pointer-events-auto flex items-start gap-2.5 px-4 py-3 rounded-xl border shadow-2xl text-xs sm:text-sm font-medium transition-all duration-300 opacity-0 translate-y-2 " + (themes[type] || themes.info);
+      node.innerHTML = '<svg class="w-4 h-4 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">' + (icons[type] || icons.info) + '</svg><span class="leading-snug">' + escapeHtml(message) + '</span>';
+      el.toastContainer.appendChild(node);
+      requestAnimationFrame(() => node.classList.remove("opacity-0", "translate-y-2"));
+      setTimeout(() => {
+        node.classList.add("opacity-0", "-translate-y-1");
+        setTimeout(() => node.remove(), 300);
+      }, 3600);
+    }
+
+    /** Salin teks aman untuk iframe dan perangkat mobile */
+    function copyText(text) {
+      try {
+        const ta = document.createElement("textarea");
+        ta.value = String(text || "");
+        ta.setAttribute("readonly", "");
+        ta.style.position = "fixed";
+        ta.style.top = "-9999px";
+        ta.style.left = "-9999px";
+        document.body.appendChild(ta);
+        ta.select();
+        ta.setSelectionRange(0, ta.value.length);
+        const ok = document.execCommand("copy");
+        document.body.removeChild(ta);
+        return ok;
+      } catch (err) {
+        return false;
+      }
+    }
+
+    function formatWIB(dateObj) {
+      try {
+        return new Intl.DateTimeFormat("id-ID", {
+          day: "2-digit",
+          month: "short",
+          year: "numeric",
+          hour: "2-digit",
+          minute: "2-digit"
+        }).format(dateObj) + " WIB";
+      } catch (err) {
+        return dateObj.toLocaleString("id-ID");
+      }
+    }
+
+    function normalizeWA(raw) {
+      let s = String(raw || "").replace(/[\s\-().]/g, "");
+      if (s.startsWith("+")) s = s.slice(1);
+      return s;
+    }
+
+    function maskWA(wa) {
+      const clean = normalizeWA(wa);
+      if (clean.length < 8) return clean ? "****" : "";
+      return clean.slice(0, 4) + "-****-" + clean.slice(-4);
+    }
+
+    function formatBytes(bytes) {
+      if (bytes < 1024) return bytes + " B";
+      if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + " KB";
+      return (bytes / (1024 * 1024)).toFixed(2) + " MB";
+    }
+
+    /** Verifikasi akses baik di Mode Simulasi maupun Live Mode (Apps Script) */
+    async function apiVerifyAccess(authPayload) {
+      if (IS_SIM_MODE) throw new Error("APPS_SCRIPT_URL belum diisi.");
+
+      // LIVE MODE: POST ke Google Apps Script (text/plain agar bebas CORS preflight)
+      const res = await fetch(CONFIG.APPS_SCRIPT_URL, {
+        method: "POST",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify({
+          action: "verify_access",
+          authMethod: authPayload.method,
+          kodeUnik: authPayload.kodeUnik || "",
+          id: authPayload.id || "",
+          wa4Digit: authPayload.wa4Digit || ""
+        })
+      });
+      if (!res.ok) throw new Error("Server merespons HTTP " + res.status);
+      return await res.json();
+    }
+
+    async function apiSubmitAddress(addressData) {
+      if (IS_SIM_MODE) throw new Error("APPS_SCRIPT_URL belum diisi.");
+
+      const res = await fetch(CONFIG.APPS_SCRIPT_URL, {
+        method: "POST",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify({
+          action: "submit_address",
+          authMethod: state.auth.method,
+          kodeUnik: state.auth.kodeUnik || "",
+          id: state.buyer.id,
+          wa4Digit: state.auth.wa4Digit || "",
+          ...addressData
+        })
+      });
+      if (!res.ok) throw new Error("Server merespons HTTP " + res.status);
+      return await res.json();
+    }
+
+    async function apiUploadPayment(paymentData) {
+      if (IS_SIM_MODE) throw new Error("APPS_SCRIPT_URL belum diisi.");
+
+      const res = await fetch(CONFIG.APPS_SCRIPT_URL, {
+        method: "POST",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify({
+          action: "upload_payment",
+          authMethod: state.auth.method,
+          kodeUnik: state.auth.kodeUnik || "",
+          id: state.buyer.id,
+          wa4Digit: state.auth.wa4Digit || "",
+          metodeBayar: paymentData.metodeBayar,
+          catatanBayar: paymentData.catatanBayar,
+          fileBase64: paymentData.fileBase64,
+          mimeType: paymentData.mimeType
+        })
+      });
+      if (!res.ok) throw new Error("Server merespons HTTP " + res.status);
+      return await res.json();
+    }
+
+    // =========================================================================
+    // 6. KOMPRESI GAMBAR CLIENT-SIDE (<canvas> MAX 1200PX, JPEG 0.78)
+    // =========================================================================
+    function compressImageFile(file, maxDimension = 1200, quality = 0.78) {
+      return new Promise((resolve, reject) => {
+        if (!file || !file.type.startsWith("image/")) {
+          reject(new Error("File harus berupa gambar (JPG, PNG, WebP)."));
+          return;
+        }
+        const reader = new FileReader();
+        reader.onerror = () => reject(new Error("Gagal membaca file gambar."));
+        reader.onload = (ev) => {
+          const img = new Image();
+          img.onerror = () => reject(new Error("Format gambar tidak dapat diproses browser."));
+          img.onload = () => {
+            try {
+              let width = img.naturalWidth || img.width;
+              let height = img.naturalHeight || img.height;
+              if (width > maxDimension || height > maxDimension) {
+                if (width >= height) {
+                  height = Math.round((height * maxDimension) / width);
+                  width = maxDimension;
+                } else {
+                  width = Math.round((width * maxDimension) / height);
+                  height = maxDimension;
+                }
+              }
+              const canvas = document.createElement("canvas");
+              canvas.width = width;
+              canvas.height = height;
+              const ctx = canvas.getContext("2d");
+              ctx.fillStyle = "#FFFFFF";
+              ctx.fillRect(0, 0, width, height);
+              ctx.drawImage(img, 0, 0, width, height);
+
+              const dataUrl = canvas.toDataURL("image/jpeg", quality);
+              const base64 = dataUrl.split(",")[1] || "";
+              const compressedBytes = Math.round((base64.length * 3) / 4);
+
+              resolve({
+                base64,
+                mimeType: "image/jpeg",
+                fileName: file.name,
+                originalBytes: file.size,
+                compressedBytes,
+                dataUrl
+              });
+            } catch (err) {
+              reject(new Error("Gagal mengompres gambar."));
+            }
+          };
+          img.src = ev.target.result;
+        };
+        reader.readAsDataURL(file);
+      });
+    }
+
+    // =========================================================================
+    // 7. RENDERING UI & 6-STATUS STATE MACHINE
+    // =========================================================================
+    function applyOptionalAssets() {
+      const a = CONFIG.ASSETS || {};
+      if (a.posterBg) {
+        el.heroPosterImg.onload = () => el.heroPosterWrap.classList.remove("hidden");
+        el.heroPosterImg.onerror = () => el.heroPosterWrap.classList.add("hidden");
+        el.heroPosterImg.src = a.posterBg;
+      }
+      if (a.emblemStamp) {
+        el.heroEmblemImg.onload = () => {
+          el.heroEmblemImg.classList.remove("hidden");
+          el.heroEmblemSvg.classList.add("hidden");
+        };
+        el.heroEmblemImg.onerror = () => {
+          el.heroEmblemImg.classList.add("hidden");
+          el.heroEmblemSvg.classList.remove("hidden");
+        };
+        el.heroEmblemImg.src = a.emblemStamp;
+      }
+      if (a.logoHeader) {
+        el.heroLogoImg.onload = () => {
+          el.heroLogoImg.classList.remove("hidden");
+          el.heroTitleText.classList.add("hidden");
+        };
+        el.heroLogoImg.onerror = () => {
+          el.heroLogoImg.classList.add("hidden");
+          el.heroTitleText.classList.remove("hidden");
+        };
+        el.heroLogoImg.src = a.logoHeader;
+      }
+      if (a.artworkPreview) {
+        el.editionArtImg.onload = () => {
+          el.editionArtImg.classList.remove("hidden");
+          el.editionArtSvg.classList.add("hidden");
+        };
+        el.editionArtImg.onerror = () => {
+          el.editionArtImg.classList.add("hidden");
+          el.editionArtSvg.classList.remove("hidden");
+        };
+        el.editionArtImg.src = a.artworkPreview;
+      }
+    }
+
+    function renderInstagramButtons() {
+      el.adminIgButtons.innerHTML = (CONFIG.ADMINS_IG || [])
+        .map((adm) => {
+          const handle = escapeHtml(adm.handle);
+          const url = escapeHtml(adm.url);
+          return (
+            '<a href="' + url + '" target="_blank" rel="noopener noreferrer" ' +
+            'class="inline-flex items-center gap-1.5 min-h-[40px] px-3.5 py-2 rounded-xl bg-obsidian border border-bronze/40 hover:border-bone hover:bg-stoneSurface text-xs font-semibold text-bone transition">' +
+              '<svg class="w-3.5 h-3.5 text-bronze shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">' +
+                '<rect x="2" y="2" width="20" height="20" rx="5"></rect>' +
+                '<path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path>' +
+                '<line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>' +
+              '</svg>' +
+              '<span>@' + handle + '</span>' +
+            '</a>'
+          );
+        })
+        .join("");
+    }
+
+    function renderPaymentInfoPanel(customQrisDataUrl) {
+      const p = CONFIG.PAYMENT;
+      el.qrisCaption.textContent = p.qrisCaption || "";
+      el.paymentPriceNote.textContent = p.priceNote || "";
+
+      // QRIS
+      const qrisSrc = customQrisDataUrl || (p.qrisImage && p.qrisImage.trim());
+      if (qrisSrc) {
+        state.activeQrisUrl = qrisSrc;
+        el.qrisImg.onload = () => {
+          el.qrisLoadedWrap.classList.remove("hidden");
+          el.qrisLoadedWrap.classList.add("flex");
+          el.qrisPlaceholderWrap.classList.add("hidden");
+          el.btnDownloadQris.href = qrisSrc;
+        };
+        el.qrisImg.onerror = () => {
+          state.activeQrisUrl = "";
+          el.qrisLoadedWrap.classList.add("hidden");
+          el.qrisLoadedWrap.classList.remove("flex");
+          el.qrisPlaceholderWrap.classList.remove("hidden");
+        };
+        el.qrisImg.src = qrisSrc;
+      } else {
+        state.activeQrisUrl = "";
+        el.qrisLoadedWrap.classList.add("hidden");
+        el.qrisLoadedWrap.classList.remove("flex");
+        el.qrisPlaceholderWrap.classList.remove("hidden");
+      }
+
+      // Daftar rekening
+      el.paymentAccountsList.innerHTML = (p.accounts || [])
+        .map((acc, idx) => {
+          return (
+            '<div class="rounded-xl bg-obsidian border border-bronzeBorder p-3.5 flex items-center justify-between gap-3">' +
+              '<div class="min-w-0">' +
+                '<p class="font-mono text-[10px] uppercase tracking-widest text-bronze font-semibold">' + escapeHtml(acc.bank) + '</p>' +
+                '<p class="mt-0.5 font-mono text-sm sm:text-base font-bold text-bone break-all">' + escapeHtml(acc.number) + '</p>' +
+                '<p class="text-[11px] text-mutedStone truncate">' + escapeHtml(acc.holder) + '</p>' +
+              '</div>' +
+              '<button type="button" data-copy-acc="' + idx + '" class="btn-copy-account px-3 py-2 rounded-lg bg-stoneSurface border border-bronze/40 hover:border-bone text-[11px] font-semibold text-bone shrink-0 transition cursor-pointer">' +
+                'Salin' +
+              '</button>' +
+            '</div>'
+          );
+        })
+        .join("");
+
+      // Pricelist opsional
+      if (Array.isArray(p.priceList) && p.priceList.length > 0) {
+        el.paymentPriceList.classList.remove("hidden");
+        el.paymentPriceList.innerHTML = p.priceList
+          .map((item) => {
+            return (
+              '<li class="flex items-center justify-between gap-2">' +
+                '<span>' + escapeHtml(item.label) + '</span>' +
+                '<span class="font-mono text-bone font-semibold">' + escapeHtml(item.price) + '</span>' +
+              '</li>'
+            );
+          })
+          .join("");
+      } else {
+        el.paymentPriceList.classList.add("hidden");
+      }
+    }
+
+    function renderProgressTracker(status) {
+      // Pemetaan 6 status ke 4 langkah horizontal
+      // 1. Alamat | 2. Pembayaran | 3. Konfirmasi | 4. Resi
+      const steps = [
+        { num: 1, label: "Alamat" },
+        { num: 2, label: "Pembayaran" },
+        { num: 3, label: "Konfirmasi" },
+        { num: 4, label: "Resi" }
+      ];
+
+      function stepState(stepNum) {
+        if (status === "BELUM_ISI") return stepNum === 1 ? "active" : "pending";
+        if (status === "MENUNGGU_BAYAR") return stepNum === 1 ? "done" : stepNum === 2 ? "active" : "pending";
+        if (status === "PERLU_REVISI") return stepNum === 1 ? "done" : stepNum === 2 ? "alert" : "pending";
+        if (status === "MENUNGGU_KONFIRMASI") return stepNum <= 2 ? "done" : stepNum === 3 ? "active" : "pending";
+        if (status === "TERKONFIRMASI") return stepNum <= 3 ? "done" : "pending";
+        if (status === "DIKIRIM") return "done";
+        return "pending";
+      }
+
+      el.progressTracker.innerHTML = steps
+        .map((st) => {
+          const mode = stepState(st.num);
+          let boxCls = "bg-obsidian border-bronzeBorder text-mutedStone";
+          let badge = '<span class="w-5 h-5 rounded-full bg-stoneSurface border border-bronzeBorder font-mono text-[10px] font-bold flex items-center justify-center">' + st.num + '</span>';
+
+          if (mode === "done") {
+            boxCls = "bg-moss/15 border-moss/50 text-[#A7E3B5]";
+            badge = '<span class="w-5 h-5 rounded-full bg-moss/30 border border-moss text-[#B8F0C4] flex items-center justify-center"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span>';
+          } else if (mode === "active") {
+            boxCls = "bg-amberGold/15 border-amberGold/60 text-bone";
+            badge = '<span class="w-5 h-5 rounded-full bg-amberGold text-void font-mono text-[10px] font-extrabold flex items-center justify-center">' + st.num + '</span>';
+          } else if (mode === "alert") {
+            boxCls = "bg-crimson/20 border-crimson/65 text-[#FAD0D0]";
+            badge = '<span class="w-5 h-5 rounded-full bg-crimson text-white font-mono text-[10px] font-extrabold flex items-center justify-center">!</span>';
+          }
+
+          return (
+            '<li class="rounded-xl border px-2 py-2 flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-1.5 text-center transition ' + boxCls + '">' +
+              badge +
+              '<span class="text-[10px] sm:text-xs font-semibold leading-tight">' + st.label + '</span>' +
+            '</li>'
+          );
+        })
+        .join("");
+    }
+
+    function renderStatusPill(status) {
+      const map = {
+        BELUM_ISI: { text: "BELUM ISI ALAMAT", cls: "bg-stoneSurface border-bronze/40 text-bone" },
+        MENUNGGU_BAYAR: { text: "MENUNGGU BAYAR", cls: "bg-amberGold/15 border-amberGold/45 text-amberGold" },
+        PERLU_REVISI: { text: "PERLU REVISI", cls: "bg-crimson/20 border-crimson/55 text-[#F6B4B4]" },
+        MENUNGGU_KONFIRMASI: { text: "MENUNGGU KONFIRMASI", cls: "bg-amberGold/15 border-amberGold/45 text-amberGold" },
+        TERKONFIRMASI: { text: "TERKONFIRMASI", cls: "bg-moss/20 border-moss/55 text-[#9EE0AC]" },
+        DIKIRIM: { text: "SUDAH DIKIRIM", cls: "bg-moss/25 border-moss/65 text-[#B4F0C0]" }
+      };
+      const cfg = map[status] || map.BELUM_ISI;
+      el.buyerStatusPill.innerHTML =
+        '<span class="inline-flex items-center px-2 py-0.5 rounded border font-mono text-[10px] font-bold tracking-wider uppercase ' + cfg.cls + '">' + cfg.text + '</span>';
+    }
+
+    function prepareAddressFormDefaults(buyer) {
+      el.formAddress.reset();
+      clearAddressErrors();
+
+      // Banner khusus Adit & Bojone Adit (LJ-06 & LJ-07)
+      const isAditCouple = buyer.id === "LJ-06" || buyer.id === "LJ-07";
+      el.coupleMergeBanner.classList.toggle("hidden", !isAditCouple);
+      el.inputGabungPaket.checked = false;
+
+      // Auto-fill Kota / Kabupaten (kecuali Pak Idris, Adit, bojone adit, dan Gendut)
+      const skipKotaIds = ["JTG-15", "LJ-02", "LJ-06", "LJ-07"];
+      if (!skipKotaIds.includes(buyer.id) && buyer.kotaAsal) {
+        el.addrKota.value = buyer.kotaAsal;
+        el.addrKota.placeholder = "Contoh: Kab. Mojokerto";
+      } else if (buyer.id === "LJ-02") {
+        el.addrKota.value = "";
+        el.addrKota.placeholder = "Contoh: Banjarmasin / Balikpapan / Pontianak (Kalimantan)";
+      } else {
+        el.addrKota.value = "";
+        el.addrKota.placeholder = "Masukkan Kota / Kabupaten Anda";
+      }
+
+      // Auto-fill Provinsi (hanya Jawa Timur, Jawa Tengah, Jawa Barat; Luar Jawa dibiarkan kosong)
+      if (buyer.wilayah === "Jawa Timur" || buyer.wilayah === "Jawa Tengah" || buyer.wilayah === "Jawa Barat") {
+        el.addrProvinsi.value = buyer.wilayah;
+        el.addrProvinsi.placeholder = "Contoh: Jawa Timur";
+      } else {
+        el.addrProvinsi.value = "";
+        el.addrProvinsi.placeholder = buyer.id === "LJ-02" ? "Contoh: Kalimantan Selatan / Timur / Barat" : "Masukkan Provinsi Anda";
+      }
+    }
+
+    function resetProofUploadUI() {
+      state.compressedProof = null;
+      el.inputProofFile.value = "";
+      el.proofPreviewCard.classList.add("hidden");
+      el.uploadDropzone.classList.remove("hidden");
+      el.errProofFile.classList.add("hidden");
+      el.payCatatan.value = "";
+    }
+
+    function renderBuyerPortal(buyer) {
+      state.buyer = buyer;
+      el.viewAccessGate.classList.add("hidden");
+      el.viewBuyerPortal.classList.remove("hidden");
+
+      // Header Garment Tag
+      el.buyerId.textContent = buyer.id;
+      el.buyerWilayah.textContent = buyer.wilayah;
+      el.buyerNama.textContent = buyer.nama;
+      el.buyerUkuran.textContent = buyer.ukuran;
+      renderStatusPill(buyer.status);
+      renderProgressTracker(buyer.status);
+
+      if (buyer.waMasked) {
+        el.buyerWaMasked.textContent = buyer.waMasked;
+        el.buyerWaMaskedRow.classList.remove("hidden");
+      } else {
+        el.buyerWaMaskedRow.classList.add("hidden");
+      }
+
+      // Sembunyikan semua panel status dulu
+      el.panelBelumIsi.classList.add("hidden");
+      el.panelPayment.classList.add("hidden");
+      el.panelMenungguKonfirmasi.classList.add("hidden");
+      el.panelTerkonfirmasi.classList.add("hidden");
+      el.panelDikirim.classList.add("hidden");
+
+      // Tampilkan panel sesuai state machine
+      if (buyer.status === "BELUM_ISI") {
+        prepareAddressFormDefaults(buyer);
+        el.panelBelumIsi.classList.remove("hidden");
+      } else if (buyer.status === "MENUNGGU_BAYAR" || buyer.status === "PERLU_REVISI") {
+        resetProofUploadUI();
+        renderPaymentInfoPanel(state.activeQrisUrl || "");
+        el.panelPayment.classList.remove("hidden");
+        if (buyer.status === "PERLU_REVISI") {
+          el.bannerMenungguBayar.classList.add("hidden");
+          el.bannerPerluRevisi.classList.remove("hidden");
+          el.revisiAdminNote.textContent = buyer.catatanAdmin || "Bukti pembayaran perlu diperbaiki. Silakan upload ulang foto bukti transfer yang jelas.";
+        } else {
+          el.bannerPerluRevisi.classList.add("hidden");
+          el.bannerMenungguBayar.classList.remove("hidden");
+        }
+      } else if (buyer.status === "MENUNGGU_KONFIRMASI") {
+        el.waitWaktuBayar.textContent = buyer.waktuBayar || "Baru saja";
+        el.waitMetodeBayar.textContent = buyer.metodeBayar || "-";
+        el.waitWaMasked.textContent = buyer.waMasked || "-";
+        el.panelMenungguKonfirmasi.classList.remove("hidden");
+      } else if (buyer.status === "TERKONFIRMASI") {
+        el.panelTerkonfirmasi.classList.remove("hidden");
+      } else if (buyer.status === "DIKIRIM") {
+        const eks = buyer.ekspedisi || "Ekspedisi";
+        const resi = buyer.noResi || "-";
+        el.shipEkspedisiBadge.textContent = eks;
+        el.shipResiNumber.textContent = resi;
+        el.btnTrackResi.href = "https://cekresi.com/?noresi=" + encodeURIComponent(resi);
+        if (buyer.catatanAdmin) {
+          el.shipNoteText.textContent = buyer.catatanAdmin;
+          el.shipNoteWrap.classList.remove("hidden");
+        } else {
+          el.shipNoteWrap.classList.add("hidden");
+        }
+        el.panelDikirim.classList.remove("hidden");
+      }
+    }
+
+    function logoutToGate() {
+      state.auth = null;
+      state.buyer = null;
+      state.compressedProof = null;
+      el.viewBuyerPortal.classList.add("hidden");
+      el.viewAccessGate.classList.remove("hidden");
+      hideGateError();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    // =========================================================================
+    // 8. ACCESS GATE: TAB SWITCHING, DROPDOWN PREDIKTIF & LOGIN
+    // =========================================================================
+    function showGateError(msg) {
+      el.gateErrorText.textContent = msg;
+      el.gateErrorBox.classList.remove("hidden");
+    }
+
+    function hideGateError() {
+      el.gateErrorBox.classList.add("hidden");
+      el.gateErrorText.textContent = "";
+    }
+
+    function switchLoginTab(tab) {
+      state.activeLoginTab = tab;
+      hideGateError();
+      const isCode = tab === "code";
+
+      el.formLoginCode.classList.toggle("hidden", !isCode);
+      el.formLoginWa4.classList.toggle("hidden", isCode);
+
+      el.tabLoginCode.setAttribute("aria-selected", isCode ? "true" : "false");
+      el.tabLoginWa4.setAttribute("aria-selected", !isCode ? "true" : "false");
+
+      if (isCode) {
+        el.tabLoginCode.className = "min-h-[44px] px-3 py-2 rounded-lg text-xs sm:text-sm font-semibold transition cursor-pointer bg-stoneSurface text-bone border border-bronze/45 shadow-sm";
+        el.tabLoginWa4.className = "min-h-[44px] px-3 py-2 rounded-lg text-xs sm:text-sm font-semibold transition cursor-pointer text-mutedStone hover:text-bone border border-transparent";
+      } else {
+        el.tabLoginWa4.className = "min-h-[44px] px-3 py-2 rounded-lg text-xs sm:text-sm font-semibold transition cursor-pointer bg-stoneSurface text-bone border border-bronze/45 shadow-sm";
+        el.tabLoginCode.className = "min-h-[44px] px-3 py-2 rounded-lg text-xs sm:text-sm font-semibold transition cursor-pointer text-mutedStone hover:text-bone border border-transparent";
+      }
+    }
+
+    function filterWa4Names(query) {
+      const q = String(query || "").trim().toLowerCase();
+      state.wa4Filtered = q
+        ? PO_NAMES.filter((p) => p.nama.toLowerCase().includes(q))
+        : [...PO_NAMES];
+      state.wa4ActiveIdx = state.wa4Filtered.length > 0 ? 0 : -1;
+      renderWa4Dropdown();
+    }
+
+    function openWa4Dropdown() {
+      state.wa4DropdownOpen = true;
+      el.wa4NameDropdown.classList.remove("hidden");
+      el.inputWa4Name.setAttribute("aria-expanded", "true");
+      renderWa4Dropdown();
+    }
+
+    function closeWa4Dropdown() {
+      state.wa4DropdownOpen = false;
+      el.wa4NameDropdown.classList.add("hidden");
+      el.inputWa4Name.setAttribute("aria-expanded", "false");
+    }
+
+    function renderWa4Dropdown() {
+      if (state.wa4Filtered.length === 0) {
+        el.wa4NameDropdown.innerHTML =
+          '<div class="p-4 text-center text-xs text-mutedStone">Nama tidak ditemukan pada daftar 29 pemesan PO.</div>';
+        return;
+      }
+      // Hanya menampilkan Nama PO — TANPA status badge dan TANPA info pribadi apa pun
+      el.wa4NameDropdown.innerHTML = state.wa4Filtered
+        .map((p, idx) => {
+          const isActive = idx === state.wa4ActiveIdx;
+          return (
+            '<div role="option" data-wa4-id="' + escapeHtml(p.id) + '" ' +
+            'class="wa4-opt px-4 py-2.5 text-sm cursor-pointer transition flex items-center justify-between ' +
+            (isActive ? 'bg-bronze/20 text-bone font-semibold' : 'text-bone/90 hover:bg-bronze/10') + '">' +
+              '<span>' + escapeHtml(p.nama) + '</span>' +
+              '<span class="font-mono text-[10px] text-mutedStone">PO</span>' +
+            '</div>'
+          );
+        })
+        .join("");
+
+      const activeEl = el.wa4NameDropdown.children[state.wa4ActiveIdx];
+      if (activeEl) activeEl.scrollIntoView({ block: "nearest" });
+    }
+
+    function selectWa4Name(id) {
+      const item = PO_NAMES.find((p) => p.id === id);
+      if (!item) return;
+      state.wa4SelectedId = item.id;
+      el.inputWa4Name.value = item.nama;
+      el.btnClearWa4Name.classList.remove("hidden");
+      closeWa4Dropdown();
+      el.inputWa4Digits.focus();
+    }
+
+    async function executeLogin(authPayload) {
+      if (state.busy) return;
+      hideGateError();
+      state.busy = true;
+      el.btnLoginCode.disabled = true;
+      el.btnLoginWa4.disabled = true;
+      if (authPayload.method === "code") el.spinnerLoginCode.classList.remove("hidden");
+      if (authPayload.method === "wa4") el.spinnerLoginWa4.classList.remove("hidden");
+
+      try {
+        const res = await apiVerifyAccess(authPayload);
+        if (res && res.ok && res.buyer) {
+          state.auth = authPayload;
+          renderBuyerPortal(res.buyer);
+          showToast("Selamat datang, " + res.buyer.nama + "!", "success");
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        } else {
+          showGateError((res && res.message) || PRIVACY_GENERIC_ERR);
+        }
+      } catch (err) {
+        console.error(err);
+        showGateError("Gagal terhubung ke server. Periksa koneksi internet Anda lalu coba lagi.");
+      } finally {
+        state.busy = false;
+        el.btnLoginCode.disabled = false;
+        el.btnLoginWa4.disabled = false;
+        el.spinnerLoginCode.classList.add("hidden");
+        el.spinnerLoginWa4.classList.add("hidden");
+      }
+    }
+
+    // =========================================================================
+    // 9. VALIDASI & SUBMIT FORM ALAMAT (STEP 1)
+    // =========================================================================
+    function setAddrErr(inputEl, errId, msg) {
+      const errEl = document.getElementById(errId);
+      if (!errEl) return;
+      if (msg) {
+        errEl.textContent = msg;
+        errEl.classList.remove("hidden");
+        if (inputEl && inputEl.type !== "checkbox") {
+          inputEl.classList.add("border-crimson");
+          inputEl.classList.remove("border-bronzeBorder");
+        }
+      } else {
+        errEl.textContent = "";
+        errEl.classList.add("hidden");
+        if (inputEl && inputEl.type !== "checkbox") {
+          inputEl.classList.remove("border-crimson");
+          inputEl.classList.add("border-bronzeBorder");
+        }
+      }
+    }
+
+    function clearAddressErrors() {
+      setAddrErr(el.addrNamaPenerima, "err-addr-nama", "");
+      setAddrErr(el.addrWa, "err-addr-wa", "");
+      setAddrErr(el.addrAlamat, "err-addr-alamat", "");
+      setAddrErr(el.addrDesa, "err-addr-desa", "");
+      setAddrErr(el.addrKecamatan, "err-addr-kecamatan", "");
+      setAddrErr(el.addrKota, "err-addr-kota", "");
+      setAddrErr(el.addrProvinsi, "err-addr-provinsi", "");
+      setAddrErr(el.addrKodePos, "err-addr-kodepos", "");
+      setAddrErr(el.addrConfirm, "err-addr-confirm", "");
+    }
+
+    async function handleAddressSubmit(e) {
+      e.preventDefault();
+      if (state.busy || !state.buyer) return;
+      clearAddressErrors();
+
+      let valid = true;
+      let firstBad = null;
+      const fail = (inp, errId, msg) => {
+        setAddrErr(inp, errId, msg);
+        valid = false;
+        if (!firstBad) firstBad = inp;
+      };
+
+      const namaPenerima = el.addrNamaPenerima.value.trim();
+      if (namaPenerima.length < 3) fail(el.addrNamaPenerima, "err-addr-nama", "Nama lengkap penerima minimal 3 karakter.");
+
+      const noWa = normalizeWA(el.addrWa.value);
+      if (!/^(08|628)\d{8,13}$/.test(noWa)) fail(el.addrWa, "err-addr-wa", "Nomor WA wajib 10–15 digit angka, diawali 08 atau 628.");
+
+      const alamatLengkap = el.addrAlamat.value.trim();
+      if (alamatLengkap.length < 10) fail(el.addrAlamat, "err-addr-alamat", "Mohon lengkapi alamat (Jalan / Dusun / No. Rumah / Patokan).");
+
+      const desa = el.addrDesa.value.trim();
+      if (!desa) fail(el.addrDesa, "err-addr-desa", "Desa / Kelurahan wajib diisi.");
+
+      const kecamatan = el.addrKecamatan.value.trim();
+      if (!kecamatan) fail(el.addrKecamatan, "err-addr-kecamatan", "Kecamatan wajib diisi.");
+
+      const kota = el.addrKota.value.trim();
+      if (!kota) fail(el.addrKota, "err-addr-kota", "Kota / Kabupaten wajib diisi.");
+
+      const provinsi = el.addrProvinsi.value.trim();
+      if (!provinsi) fail(el.addrProvinsi, "err-addr-provinsi", "Provinsi wajib diisi.");
+
+      const kodePos = el.addrKodePos.value.trim();
+      if (!/^\d{5}$/.test(kodePos)) fail(el.addrKodePos, "err-addr-kodepos", "Kode pos wajib tepat 5 digit angka.");
+
+      if (!el.addrConfirm.checked) fail(el.addrConfirm, "err-addr-confirm", "Centang konfirmasi kebenaran data terlebih dahulu.");
+
+      if (!valid) {
+        if (firstBad) {
+          firstBad.focus();
+          firstBad.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+        showToast("Periksa kembali kolom yang masih belum lengkap.", "error");
+        return;
+      }
+
+      state.busy = true;
+      el.btnSubmitAddress.disabled = true;
+      el.spinnerAddress.classList.remove("hidden");
+      el.labelSubmitAddress.textContent = "Menyimpan Alamat...";
+
+      try {
+        const res = await apiSubmitAddress({
+          namaPenerima,
+          noWa,
+          alamatLengkap,
+          rtRw: el.addrRtRw.value.trim(),
+          desa,
+          kecamatan,
+          kota,
+          provinsi,
+          kodePos,
+          gabungPaket: el.inputGabungPaket.checked,
+          catatan: el.addrCatatan.value.trim()
+        });
+
+        if (res && res.ok && res.buyer) {
+          renderBuyerPortal(res.buyer);
+          showToast("Alamat tersimpan! Silakan lanjutkan pembayaran & upload bukti transfer.", "success");
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        } else {
+          showToast((res && res.message) || "Gagal menyimpan alamat.", "error");
+        }
+      } catch (err) {
+        console.error(err);
+        showToast("Gangguan jaringan saat menyimpan alamat. Coba lagi.", "error");
+      } finally {
+        state.busy = false;
+        el.btnSubmitAddress.disabled = false;
+        el.spinnerAddress.classList.add("hidden");
+        el.labelSubmitAddress.textContent = "Simpan Alamat & Lanjut Pembayaran";
+      }
+    }
+
+    // =========================================================================
+    // 10. UPLOAD & SUBMIT BUKTI PEMBAYARAN (STEP 2 & PERLU_REVISI)
+    // =========================================================================
+    async function processSelectedProofFile(file) {
+      el.errProofFile.classList.add("hidden");
+      if (!file) return;
+      try {
+        showToast("Mengompres gambar bukti pembayaran...", "info");
+        const result = await compressImageFile(file, 1200, 0.78);
+        state.compressedProof = result;
+        el.proofPreviewImg.src = result.dataUrl;
+        el.proofFileName.textContent = result.fileName;
+        el.proofSizeInfo.textContent = "Ukuran: " + formatBytes(result.originalBytes) + " → " + formatBytes(result.compressedBytes) + " (JPEG terkompresi)";
+        el.uploadDropzone.classList.add("hidden");
+        el.proofPreviewCard.classList.remove("hidden");
+      } catch (err) {
+        el.errProofFile.textContent = err.message || "File gambar tidak valid.";
+        el.errProofFile.classList.remove("hidden");
+      }
+    }
+
+    async function handlePaymentSubmit(e) {
+      e.preventDefault();
+      if (state.busy || !state.buyer) return;
+
+      if (!state.compressedProof) {
+        el.errProofFile.textContent = "Mohon pilih / upload foto bukti pembayaran terlebih dahulu.";
+        el.errProofFile.classList.remove("hidden");
+        showToast("Bukti pembayaran belum dipilih.", "error");
+        return;
+      }
+
+      state.busy = true;
+      el.btnSubmitPayment.disabled = true;
+      el.spinnerPayment.classList.remove("hidden");
+      el.labelSubmitPayment.textContent = "Mengunggah Bukti Pembayaran...";
+
+      try {
+        const res = await apiUploadPayment({
+          metodeBayar: el.payMetode.value,
+          catatanBayar: el.payCatatan.value.trim(),
+          fileBase64: state.compressedProof.base64,
+          mimeType: state.compressedProof.mimeType
+        });
+
+        if (res && res.ok && res.buyer) {
+          renderBuyerPortal(res.buyer);
+          showToast("Bukti pembayaran berhasil dikirim! Menunggu konfirmasi admin.", "success");
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        } else {
+          showToast((res && res.message) || "Gagal mengirim bukti pembayaran.", "error");
+        }
+      } catch (err) {
+        console.error(err);
+        showToast("Gangguan jaringan saat mengunggah bukti. Silakan coba lagi.", "error");
+      } finally {
+        state.busy = false;
+        el.btnSubmitPayment.disabled = false;
+        el.spinnerPayment.classList.add("hidden");
+        el.labelSubmitPayment.textContent = "Kirim Bukti Pembayaran";
+      }
+    }
+
+    async function refreshActiveBuyerStatus() {
+      if (!state.auth || state.busy) return;
+      showToast("Memeriksa status terbaru...", "info");
+      try {
+        const res = await apiVerifyAccess(state.auth);
+        if (res && res.ok && res.buyer) {
+          renderBuyerPortal(res.buyer);
+          showToast("Status diperbarui: " + res.buyer.status.replace(/_/g, " "), "success");
+        }
+      } catch (err) {
+        showToast("Gagal memperbarui status. Coba lagi nanti.", "error");
+      }
+    }
+
+    // =========================================================================
+    // 13. EVENT LISTENERS
+    // =========================================================================
+    function bindEvents() {
+      // Hero Detail Edisi Toggle
+      el.btnToggleEdition.addEventListener("click", () => {
+        const hidden = el.editionPreviewCard.classList.toggle("hidden");
+        el.iconEditionChevron.classList.toggle("rotate-180", !hidden);
+      });
+
+      // Access Gate Tabs
+      el.tabLoginCode.addEventListener("click", () => switchLoginTab("code"));
+      el.tabLoginWa4.addEventListener("click", () => switchLoginTab("wa4"));
+
+      // Auto-uppercase Kode Unik
+      el.inputKodeUnik.addEventListener("input", (e) => {
+        const start = e.target.selectionStart;
+        e.target.value = e.target.value.toUpperCase();
+        try { e.target.setSelectionRange(start, start); } catch (_) {}
+        hideGateError();
+      });
+
+      // Login via Kode Unik
+      el.formLoginCode.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const code = el.inputKodeUnik.value.trim().toUpperCase();
+        if (!code) {
+          showGateError("Masukkan Kode Unik Anda terlebih dahulu.");
+          el.inputKodeUnik.focus();
+          return;
+        }
+        executeLogin({ method: "code", kodeUnik: code });
+      });
+
+      // Tab 2: Predictive Dropdown Nama PO
+      el.inputWa4Name.addEventListener("focus", () => {
+        filterWa4Names(el.inputWa4Name.value);
+        openWa4Dropdown();
+      });
+      el.inputWa4Name.addEventListener("click", () => {
+        if (!state.wa4DropdownOpen) {
+          filterWa4Names(el.inputWa4Name.value);
+          openWa4Dropdown();
+        }
+      });
+      el.inputWa4Name.addEventListener("input", (e) => {
+        const val = e.target.value;
+        el.btnClearWa4Name.classList.toggle("hidden", val.length === 0);
+        state.wa4SelectedId = "";
+        hideGateError();
+        filterWa4Names(val);
+        openWa4Dropdown();
+      });
+      el.inputWa4Name.addEventListener("keydown", (e) => {
+        const list = state.wa4Filtered;
+        if (e.key === "ArrowDown") {
+          e.preventDefault();
+          if (!state.wa4DropdownOpen) { filterWa4Names(el.inputWa4Name.value); openWa4Dropdown(); return; }
+          if (list.length > 0) {
+            state.wa4ActiveIdx = (state.wa4ActiveIdx + 1) % list.length;
+            renderWa4Dropdown();
+          }
+        } else if (e.key === "ArrowUp") {
+          e.preventDefault();
+          if (!state.wa4DropdownOpen) { filterWa4Names(el.inputWa4Name.value); openWa4Dropdown(); return; }
+          if (list.length > 0) {
+            state.wa4ActiveIdx = (state.wa4ActiveIdx - 1 + list.length) % list.length;
+            renderWa4Dropdown();
+          }
+        } else if (e.key === "Enter") {
+          if (state.wa4DropdownOpen && list.length > 0 && state.wa4ActiveIdx >= 0) {
+            e.preventDefault();
+            selectWa4Name(list[state.wa4ActiveIdx].id);
+          }
+        } else if (e.key === "Escape") {
+          closeWa4Dropdown();
+        }
+      });
+      el.wa4NameDropdown.addEventListener("click", (e) => {
+        const opt = e.target.closest(".wa4-opt");
+        if (opt) selectWa4Name(opt.getAttribute("data-wa4-id"));
+      });
+      el.btnClearWa4Name.addEventListener("click", () => {
+        state.wa4SelectedId = "";
+        el.inputWa4Name.value = "";
+        el.btnClearWa4Name.classList.add("hidden");
+        filterWa4Names("");
+        openWa4Dropdown();
+        el.inputWa4Name.focus();
+      });
+      document.addEventListener("click", (e) => {
+        if (state.wa4DropdownOpen && !el.wa4ComboboxWrap.contains(e.target)) {
+          closeWa4Dropdown();
+        }
+      });
+
+      // Sanitasi 4 digit WA
+      el.inputWa4Digits.addEventListener("input", (e) => {
+        e.target.value = e.target.value.replace(/\D/g, "").slice(0, 4);
+        hideGateError();
+      });
+
+      // Login via Nama + 4 Digit WA
+      el.formLoginWa4.addEventListener("submit", (e) => {
+        e.preventDefault();
+        // Cocokkan teks jika user mengetik persis tanpa klik dropdown
+        let selectedId = state.wa4SelectedId;
+        if (!selectedId) {
+          const typed = el.inputWa4Name.value.trim().toLowerCase();
+          const exact = PO_NAMES.find((p) => p.nama.toLowerCase() === typed);
+          if (exact) selectedId = exact.id;
+        }
+        const digits = el.inputWa4Digits.value.trim();
+        if (!selectedId) {
+          showGateError("Silakan pilih nama Anda dari daftar 29 pemesan PO.");
+          el.inputWa4Name.focus();
+          return;
+        }
+        if (!/^\d{4}$/.test(digits)) {
+          showGateError("Masukkan tepat 4 digit terakhir nomor WhatsApp terdaftar Anda.");
+          el.inputWa4Digits.focus();
+          return;
+        }
+        executeLogin({ method: "wa4", id: selectedId, wa4Digit: digits });
+      });
+
+      // Uji cepat Habib di Mode Simulasi
+
+      // Logout
+      el.btnLogout.addEventListener("click", logoutToGate);
+
+      // Step 1 Form Alamat
+      el.addrKodePos.addEventListener("input", (e) => {
+        e.target.value = e.target.value.replace(/\D/g, "").slice(0, 5);
+        setAddrErr(el.addrKodePos, "err-addr-kodepos", "");
+      });
+      el.addrNamaPenerima.addEventListener("input", () => setAddrErr(el.addrNamaPenerima, "err-addr-nama", ""));
+      el.addrWa.addEventListener("input", () => setAddrErr(el.addrWa, "err-addr-wa", ""));
+      el.addrAlamat.addEventListener("input", () => setAddrErr(el.addrAlamat, "err-addr-alamat", ""));
+      el.addrDesa.addEventListener("input", () => setAddrErr(el.addrDesa, "err-addr-desa", ""));
+      el.addrKecamatan.addEventListener("input", () => setAddrErr(el.addrKecamatan, "err-addr-kecamatan", ""));
+      el.addrKota.addEventListener("input", () => setAddrErr(el.addrKota, "err-addr-kota", ""));
+      el.addrProvinsi.addEventListener("input", () => setAddrErr(el.addrProvinsi, "err-addr-provinsi", ""));
+      el.addrConfirm.addEventListener("change", () => setAddrErr(el.addrConfirm, "err-addr-confirm", ""));
+      el.formAddress.addEventListener("submit", handleAddressSubmit);
+
+      // Step 2: Copy Rekening
+      el.paymentAccountsList.addEventListener("click", (e) => {
+        const btn = e.target.closest(".btn-copy-account");
+        if (!btn) return;
+        const idx = Number(btn.getAttribute("data-copy-acc"));
+        const acc = (CONFIG.PAYMENT.accounts || [])[idx];
+        if (acc && copyText(acc.number)) {
+          showToast("Nomor rekening " + acc.bank + " disalin!", "success");
+        }
+      });
+
+      // Step 2: QRIS Lightbox & Tester Lokal Simulasi
+      const openQrisZoom = () => {
+        if (!state.activeQrisUrl) return;
+        el.qrisZoomImg.src = state.activeQrisUrl;
+        el.qrisZoomCaption.textContent = CONFIG.PAYMENT.qrisCaption || "";
+        el.modalQrisZoom.classList.remove("hidden");
+      };
+      el.btnZoomQris.addEventListener("click", openQrisZoom);
+      el.btnZoomQrisText.addEventListener("click", openQrisZoom);
+      el.btnCloseQrisZoom.addEventListener("click", () => el.modalQrisZoom.classList.add("hidden"));
+      el.modalQrisZoom.addEventListener("click", (e) => {
+        if (e.target === el.modalQrisZoom) el.modalQrisZoom.classList.add("hidden");
+      });
+
+      // Step 2: Dropzone Upload Bukti Pembayaran
+      el.uploadDropzone.addEventListener("click", () => el.inputProofFile.click());
+      el.uploadDropzone.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          el.inputProofFile.click();
+        }
+      });
+      el.uploadDropzone.addEventListener("dragover", (e) => {
+        e.preventDefault();
+        el.uploadDropzone.classList.add("border-bone", "bg-stoneSurface");
+      });
+      el.uploadDropzone.addEventListener("dragleave", () => {
+        el.uploadDropzone.classList.remove("border-bone", "bg-stoneSurface");
+      });
+      el.uploadDropzone.addEventListener("drop", (e) => {
+        e.preventDefault();
+        el.uploadDropzone.classList.remove("border-bone", "bg-stoneSurface");
+        const file = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0];
+        if (file) processSelectedProofFile(file);
+      });
+      el.inputProofFile.addEventListener("change", (e) => {
+        const file = e.target.files && e.target.files[0];
+        if (file) processSelectedProofFile(file);
+      });
+      el.btnChangeProof.addEventListener("click", () => el.inputProofFile.click());
+      el.btnRemoveProof.addEventListener("click", resetProofUploadUI);
+      el.formPayment.addEventListener("submit", handlePaymentSubmit);
+
+      // Step 3 & 4 Refresh Status & Copy Resi
+      el.btnRefreshStatusWait.addEventListener("click", refreshActiveBuyerStatus);
+      el.btnRefreshStatusConfirmed.addEventListener("click", refreshActiveBuyerStatus);
+      el.btnCopyResi.addEventListener("click", () => {
+        const resi = state.buyer && state.buyer.noResi;
+        if (resi && copyText(resi)) {
+          showToast("Nomor resi " + resi + " berhasil disalin!", "success");
+        }
+      });
+    }
+
+    // =========================================================================
+    // 14. INISIALISASI & AUTO-LOGIN QUERY ?kode=IND-XXXX
+    // =========================================================================
+    function init() {
+      if (IS_SIM_MODE) showToast("Portal belum dikonfigurasi (APPS_SCRIPT_URL kosong). Hubungi admin.", "error");
+      applyOptionalAssets();
+      renderInstagramButtons();
+      renderPaymentInfoPanel();
+      bindEvents();
+
+      // Cek URL parameter ?kode=IND-XXXX untuk auto-login link personal
+      try {
+        const params = new URLSearchParams(window.location.search);
+        const kodeParam = (params.get("kode") || "").trim().toUpperCase();
+        if (kodeParam) {
+          try { window.history.replaceState(null, "", window.location.pathname); } catch (_) {}
+          switchLoginTab("code");
+          el.inputKodeUnik.value = kodeParam;
+          executeLogin({ method: "code", kodeUnik: kodeParam });
+        }
+      } catch (err) {
+        console.error("Query parse error:", err);
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", init);
+  </script>
+</body>
+</html>
